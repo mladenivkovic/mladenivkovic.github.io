@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+
+  <head>
+    <title>Software</title>
+    <meta name="AUTHOR" content="Mladen Ivkovic">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+  </head>
+
+
+
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+
+
+
+
+
+<body>
+
+
+<!-- Navigation Bar -->
+
+<script src="showMenuIcon.js"></script>
+
+<nav>
+  <div class="topnav" id="myTopnav">
+    <a href="https://obswww.unige.ch/~ivkovic/index.html" >    Home                        </a>
+    <a href="work.html" >                                      My Work                     </a>
+    <a href="CV.html">                                         CV                          </a>
+    <a href="scripts-and-summaries.html" >                     Scripts And Study Material  </a>
+    <a href="software.html" class="here" >                     Software                    </a>
+    <a href="gallery.html">                                    Gallery                     </a>
+    <a href="links.html">                                      Links                       </a>
+    <a href="downloads" >                                      Downloads                   </a>
+    <!-- Menu icon -->
+    <a href="javascript:void(0);" class="icon" onclick="showMenuIcon()">
+      <i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
+
+
+
+
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+
+
+
+
+
+<!-- Table of Contents -->
+<div class="sidenav">
+
+  <div id="toc_container">
+  
+    <p class="toc_title">Contents</p>
+    <ul class="toc_list">
+      <li><a href="#my_own">        My own code     </a></li>
+      <li><a href="#contribution">  Contributions   </a></li>
+      <li><a href="#docs">          Docs            </a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<div id="maintext">
+
+
+<!-- =============================== -->
+<h1> Software </h1>
+<!-- =============================== -->
+
+<p>
+Some of the software that I've been working on and is publicly available.
+</p>
+
+
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<h2 id=my_own> My Own Work </h2>
+<!-- ====================================================== -->
+
+
+<p>
+<ul>
+
+  <li>  
+    <a href="https://github.com/mladenivkovic/published_thingies"> Public Code </a> <br>
+
+    Collection of various codes, scripts and python modules, mainly for learning/teaching matters.
+  </li>
+
+  <li>  
+    <a href="https://github.com/mladenivkovic/coding_templates"> Coding Templates</a> <br>
+
+    Various how-to's for different programming languages and some libraries with those languages,
+    along with a few algorithm demonstrations.
+
+    So far includes C, c++, python, fortran, LaTeX, and bash.
+  </li>
+
+  <li> 
+    <a href="https://pypi.org/project/astro-meshless-surfaces/"> Astro Meshless Surfaces </a> <br>
+
+    A small, inefficient python module for computing effective surfaces for meshless methods of particle
+    hydrodynamics the <a href="https://arxiv.org/abs/1409.7395">Hopkins 2015</a> way or the
+    <a href="https://arxiv.org/abs/1209.4302"> Ivanova 2013</a> way.
+
+    It's only written for 2d computations and meant to test things out, generate some plots etc,
+    not to be used for serious computations.
+
+    Also includes simple reading-in functions for <a href="https://ascl.net/1805.020" > SWIFT</a> hdf5
+    output.
+  </li>
+
+  <li>  
+    <a href="https://github.com/mladenivkovic/homepage"> This homepage</a> <br>
+
+    Source code for this homepage.
+  </li>
+
+  <li>  <a href="https://github.com/mladenivkovic/mesh-hydro"> Mesh-Hydro </a> <br>
+
+        A project to learn about essentials of (finite volume/finite difference) numerical conservation law
+        and hydrodynamics solvers. Written explicitly so it is easy to read, play with, and extend. Works in
+        1D and 2D.
+  </li>
+
+</ul>
+</p>
+
+
+
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<h2 id=contribution> Codes I've contributed to </h2>
+<!-- ====================================================== -->
+
+<p>
+<ul>
+
+  <li>  <a href="https://bitbucket.org/rteyssie/ramses/src/master/"> Ramses </a>             <br>
+
+        an open source code to model astrophysical systems. My contibution is the
+        particle unbinding and mergertree patch.
+  </li>
+
+
+  <li>  <a href="https://gitlab.com/revaz/pNbody"> pNbody </a>                               <br>
+
+        a parallelized python module toolbox designed to manipulate and display
+        interactively very large N-body systems
+  </li>
+
+
+  <li>  <a href="http://swift.dur.ac.uk/"> SWIFT </a>                                        <br>
+
+        a hydrodynamics and gravity code for astrophysics and cosmology.
+  </li>
+
+</ul>
+</p>
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<h2 id=docs> Docs </h2>
+<!-- ====================================================== -->
+
+
+<p>
+<ul>
+
+  <li>  <a href="https://obswww.unige.ch/~ivkovic/debugging/"> Debugging Notes </a>              <br>
+
+        A collection of debugging hints for software I work with
+  </li>
+
+  <li>  <a href="https://obswww.unige.ch/~ivkovic/instructions/"> Instructions</a>               <br>
+
+        Various how-to's for different software, hacks, patches... Mainly stuff I want to write down
+        because I can't be bothered to memorize it.
+  </li>
+
+  <li>  <a href="https://obswww.unige.ch/~ivkovic/notes_on_codes/"> Misc Notes</a>               <br>
+
+        Various notes on minor software specific stuff. Essentially a documentation add-on/extension.
+  </li>
+
+</ul>
+</p>
+
+
+
+
+
+
+</div> <!-- Maintext-->
+
+
+
+
+
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+
+
+<footer>
+<p>
+  Last update of this page: 16.02.2020
+</p>
+</footer>
+
+</body>
+</html>
