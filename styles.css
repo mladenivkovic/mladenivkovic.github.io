@@ -204,10 +204,11 @@ a:hover {
 /*------------------*/
 
 #images {
-   font-size: 60%; 
+   font-size: 80%; 
    text-align: center; 
-   width: 500px;
-   margin-left: 50px;
+   width: 600px;
+   margin-left: 20px;
+   margin-bottom: 80px;
 }
 
 
