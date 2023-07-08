@@ -58,6 +58,11 @@ p {
     margin-left: 50px;
 }
 
+p.frontpage {
+    margin-right: 300px;
+}
+
+
 ul {
     color: black;
     margin-left: 50px;
@@ -128,7 +133,6 @@ a:hover {
 
 
 
-
 /*  Menu Navigation Bar                */
 /*-------------------------------------*/
 
@@ -136,7 +140,6 @@ a:hover {
     background-color: #cccccc;
 	overflow: hidden;
     margin-left: 50px;
-    margin-right: 50px;
 }
 
 .topnav a {
