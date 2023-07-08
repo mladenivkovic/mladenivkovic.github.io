@@ -5,6 +5,12 @@
     /* font-family: "Catamaran", monospace; */
     }
 
+:root{
+    --sidebar-width: 350px;
+    --sidebar-margin-right: calc(var(--sidebar-width) + 50px); /* used to fit side bar */
+    --default-margin-right: 50px;
+    --default-margin-left: 100px;
+}
 
 body {
     /* background-color: Gainsboro ; */
@@ -13,8 +19,13 @@ body {
     background-color: #E6E6E6 ;
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-right: 400px;
-    margin-left: 50px;
+    margin-left: var(--default-margin-left);
+    margin-right: var(--default-margin-right);
+}
+
+/* for pages which have a sidebar */
+body.hasSidebar {
+    margin-right: var(--sidebar-margin-right);
 }
 
 
@@ -25,28 +36,40 @@ h1, h2, h3, h4 {
 
 h1 {
     font-size: 36px;
-    margin-left: 50px;
     margin-top: 20px;
+    margin-left: inherit;
+    margin-right: inherit;
+    /* margin-left: var(--default-margin-left); */
+    /* margin-right: var(--default-margin-right); */
 }
 
 
 h2 {
     font-size: 24px;
-    margin-left: 50px;
     margin-top: 100px;
+    margin-left: inherit;
+    margin-right: inherit;
+    /* margin-left: 50px; */
+    /* margin-right: var(--default-margin-right); */
 }
 
 h3 {
     font-size: 18;
-    margin-left: 50px;
     margin-top: 40px;
+    margin-left: inherit;
+    margin-right: inherit;
+    /* margin-left: 50px; */
+    /* margin-right: var(--default-margin-right); */
 }
 
 
 h4 {
     font-size: 12px;
-    margin-left: 50px;
     margin-top: 40px;
+    margin-left: inherit;
+    margin-right: inherit;
+    /* margin-left: 50px; */
+    /* margin-right: var(--default-margin-right); */
 }
 
 
@@ -54,18 +77,21 @@ p {
     color: black;
     margin-top: 20px;
     margin-bottom: 30px;
-    margin-right: 100px;
-    margin-left: 50px;
+    margin-left: inherit;
+    margin-right: inherit; /* inherit margin from body */
 }
 
 p.frontpage {
+/* frontpage subclass, to add a right margin that accommodates
+ * the picture there. Make sure the size corresponds to the pic. */
     margin-right: 300px;
 }
 
 
+
 ul {
     color: black;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -94,6 +120,7 @@ div.foot {
     margin-left: 0px;
     font-size: 12px;
 }
+
 
 
 #gallery_contents {
@@ -139,7 +166,8 @@ a:hover {
 .topnav {
     background-color: #cccccc;
 	overflow: hidden;
-    margin-left: 50px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .topnav a {
@@ -177,37 +205,6 @@ a:hover {
 }
 
 
-/* add responsiveness */
-
-/* When the screen is less than 1000 pixels wide, hide all links. */
-/* Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 1500px) {
-  /* .topnav a:not(:first-child) {display: none;} */ /* hide all links except for the first one ("Home") */
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when */
-/* the user clicks on the icon. This class makes the topnav look good */
-/* on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 1500px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-} 
-
-
 
 
 
@@ -227,13 +224,13 @@ a:hover {
 /*-------------------*/
 
 .sidenav {
-  height: 100%;             /* Full-height: remove this if you want "auto" height */
-  width: 380px;             /* Set the width of the sidebar */
-  position: fixed;          /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;               /* Stay on top */
-  top: 0;                   /* Stay at the top */
-  right: 0;                 /* fix it on the right side. use left for left side. */
-  overflow-x: hidden;       /* Disable horizontal scroll */
+  height: 100%;                 /* Full-height: remove this if you want "auto" height */
+  width: var(--sidebar-width);  /* Set the width of the sidebar */
+  position: fixed;              /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;                   /* Stay on top */
+  top: 0;                       /* Stay at the top */
+  right: 0;                     /* fix it on the right side. use left for left side. */
+  overflow-x: hidden;           /* Disable horizontal scroll */
   display: block;
   padding-top: 90px;
   padding-left: 10px;
@@ -294,11 +291,72 @@ a:hover {
 
 
 
-/* Hide side bar */
-@media screen and (max-width: 1500px) {
-  .sidenav {
-    display: none;
-  }
+
+
+
+/* ------------------------------------ */
+/* add responsiveness                   */
+/* ------------------------------------ */
+
+/* When the screen is less than XXXX pixels wide, hide all links. */
+/* Show the link that contains should open and close the topnav (.icon) */
+@media all and (max-width: 1300px) {
+    /* .topnav a:not(:first-child) {display: none;} */ /* hide all links except for the first one ("Home") */
+    .topnav a {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    /* The "responsive" class is added to the topnav with JavaScript when */
+    /* the user clicks on the icon. This class makes the topnav look good */
+    /* on small screens (display the links vertically instead of horizontally) */
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Remove margin if not enough space */ 
+    /* NOTE: You can't use variables in media queries. So you'll have to hardcode this for now. */
+    body{
+        margin-right: var(--default-margin-right);
+    }
+    body.hasSidebar{
+        margin-right: var(--default-margin-right);
+    }
+
+    /* Hide side bar if not enough space.*/
+    .sidenav {
+        display: none;
+    }
+
+    /* vanish images that don't fit and don't need to fit */
+    img.disappearing {
+        display: none;
+    }
+
+    /* Since the image now vanishes, we can use the full margin for the paragraphs */
+    p.frontpage {
+    /* frontpage subclass, to add a right margin that accommodates
+     * the picture there. Make sure the size corresponds to the pic. */
+        margin-right: var(--default-margin-right);
+    }
+}
+
+
+
 } 
+
 
 
