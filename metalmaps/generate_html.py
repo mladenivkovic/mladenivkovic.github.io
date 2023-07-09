@@ -32,10 +32,10 @@ apostasy = cmapContainer(
         )
 
 black_sabbath = cmapContainer(
-    "black_sabbath",
-    "Black Sabbath",
-    "Black Sabbath",
-    "https://coverartarchive.org/release/9fd196b4-0437-4ce2-9e7e-9966dfa86180/15612615429.jpg",
+        "black_sabbath",
+        "Black Sabbath",
+        "Black Sabbath",
+        "https://coverartarchive.org/release/9fd196b4-0437-4ce2-9e7e-9966dfa86180/15612615429.jpg",
 )
 
 blues_brothers = cmapContainer(
@@ -72,8 +72,6 @@ master_of_puppets = cmapContainer(
         "Metallica",
         "https://coverartarchive.org/release/cb100c18-fb29-4828-8d24-2fdbac6d6cff/8600878942.jpg"
         )
-
-
 
 meteora = cmapContainer(
         "meteora",
@@ -146,25 +144,137 @@ from_mars_to_sirius = cmapContainer(
         )
 
 
-plotAlbum = from_mars_to_sirius
+powerslave = cmapContainer(
+        "powerslave",
+        "Powerslave",
+        "Iron Maiden",
+        "https://coverartarchive.org/release/4766bf83-3b58-4584-b75a-43917627b790/2595131402.jpg"
+        )
+
+number_of_the_beast = cmapContainer(
+        "number_of_the_beast",
+        "The Number of the Beast",
+        "Iron Maiden",
+        "https://coverartarchive.org/release/5aa782e6-d87a-3ec1-af46-ff68c76cf8fc/7847268318.jpg"
+        )
+
+fear_of_the_dark = cmapContainer(
+        "fear_of_the_dark",
+        "Fear of the Dark",
+        "Iron Maiden",
+        "https://coverartarchive.org/release/ecc2e9db-637c-4f21-955c-6ab3e1123ffc/1282374549.jpg"
+        )
+
+painkiller = cmapContainer(
+        "painkiller",
+        "Painkiller",
+        "Judas Priest",
+        "https://coverartarchive.org/release/f3228f88-1315-4f7e-9c68-2acf0d2f6e90/7356437148.jpg"
+        )
+
+screaming_for_vengeance = cmapContainer(
+        "screaming_for_vengeance",
+        "Screaming for Vengeance",
+        "Judas Priest",
+        "https://coverartarchive.org/release/57e2798e-d7d0-4250-a17b-0b8fb56ade4f/11916137754.jpg"
+        )
+
+ashes_of_the_wake = cmapContainer(
+        "ashes_of_the_wake",
+        "Ashes of the Wake",
+        "Lamb of God",
+        "https://coverartarchive.org/release/6012b20e-8fdd-4afc-9b0e-a9f22bce81a1/36090160874.jpg"
+        )
+
+the_hunter = cmapContainer(
+        "the_hunter",
+        "The Hunter",
+        "Mastodon",
+        "https://coverartarchive.org/release/e349eaf2-865c-4b47-b719-29d4b5f8e789/3586926524.jpg"
+        )
+
+rock_n_roll = cmapContainer(
+        "rock_n_roll",
+        "Rock 'n' Roll",
+        "Mot&oumlrhead",
+        "https://coverartarchive.org/release/b4bdc9c6-a3c0-4e50-a6f5-fe6ec5e66609/14298490837.jpg"
+        )
+
+overkill = cmapContainer(
+        "overkill",
+        "Overkill",
+        "Mot&oumlrhead",
+        "https://coverartarchive.org/release/a7b33578-a44a-47e8-bcb8-e1ba8eb848fc/9157237778.jpg"
+        )
+
+reign_in_blood = cmapContainer(
+        "reign_in_blood",
+        "Reign in Blood",
+        "Slayer",
+        "https://coverartarchive.org/release/f09a3d0b-5760-41e5-bd62-1e7403b27522/26676279934.jpg"
+        )
+
+south_of_heaven = cmapContainer(
+        "south_of_heaven",
+        "South of Heaven",
+        "Slayer",
+        "https://coverartarchive.org/release/407ade2e-03b4-3951-b244-b97de8fb0433/7844026684.jpg"
+        )
+
+hypnotize = cmapContainer(
+        "hypnotize",
+        "Hypnotize",
+        "System of a Down",
+        "https://coverartarchive.org/release/c5c36cb2-d409-4c97-ae21-9f331a895566/29540284142.jpg"
+        )
+
+in_utero = cmapContainer(
+        "in_utero",
+        "In Utero",
+        "Nirvana",
+        "https://coverartarchive.org/release/80189394-8ca0-4a97-9d0e-aad32725de22/32188969568.jpg"
+        )
+
+lenfant_sauvage = cmapContainer(
+        "lenfant_sauvage",
+        "L'enfant Sauvage",
+        "Gojira",
+        "https://coverartarchive.org/release/5b7e9d43-8330-4f91-8e78-81dde869e9b5/16931897915.jpg"
+        )
+
+plotAlbum = lenfant_sauvage
 
 mapCollection = [
             apostasy,
+            ashes_of_the_wake,
             black_sabbath,
             blues_brothers,
             blues_pills,
             cosmos_factory,
             deep_purple_in_rock,
             dethalbum,
+            fear_of_the_dark,
             from_mars_to_sirius,
+            hypnotize,
+            in_utero,
             la_woman,
+            lenfant_sauvage,
             london_calling,
             master_of_puppets,
             made_in_japan,
             meteora,
+            number_of_the_beast,
             obzen,
+            overkill,
+            painkiller,
             paranoid,
+            powerslave,
+            reign_in_blood,
             ride_the_lightning,
+            rock_n_roll,
+            screaming_for_vengeance,
+            south_of_heaven,
+            the_hunter,
             ziggy_stardust,
         ]
 
