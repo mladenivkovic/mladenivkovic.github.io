@@ -10,6 +10,7 @@ import h5py
 import numpy as np
 import os
 from generate_html import mapCollection
+from metalmaps import *
 
 outputdir = "images"
 
@@ -76,9 +77,9 @@ def make_EAGLE_plot(cmap):
     hfile = h5py.File(srcfile, "r")
 
     rhoDM = hfile["dm_mass_map"][:]
-    rhoDM = rhoDM / rhoDM.max()
+    rhoDM = rhoDM / rhoDM.max()  # scale down to [0,1]
     rho = hfile["mass_map"][:]
-    rho = rho / rho.max()
+    rho = rho / rho.max()  # scale down to [0,1]
 
     # make halt plot DM, half plot baryon
     rhoPlot = rhoDM[:]
@@ -154,6 +155,7 @@ def make_NGC_plot(cmap):
     hfile = h5py.File(srcfile, "r")
 
     rho = hfile["image"][:]
+    rho = rho / rho.max()  # scale down to [0,1]
 
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
@@ -181,8 +183,8 @@ def make_NGC_plot(cmap):
 
 
 if __name__ == "__main__":
-    cmaps = [c["name"] for c in mapCollection]
-    for cmap in ["viridis", "cividis", "inferno"]:
+    cmaps = ["metalmaps." + c["name"] for c in mapCollection]
+    for cmap in cmaps:
         for suffix in ["", "_r"]:
             c = cmap + suffix
             make_KH_plot(c)

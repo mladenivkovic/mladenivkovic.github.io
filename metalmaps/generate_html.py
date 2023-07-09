@@ -2,6 +2,7 @@
 
 import jinja2
 from datetime import datetime
+import metalmaps
 
 
 def cmapContainer(name, pretty_name, artist, art_url):
@@ -23,29 +24,17 @@ def cmapContainer(name, pretty_name, artist, art_url):
     }
 
 
-viridis = cmapContainer(
-    "viridis",
-    "This is viridis",
+red = cmapContainer(
+    "red",
+    "This is red",
     "alpha",
     "https://upload.wikimedia.org/wikipedia/en/d/da/Black_Sabbath_debut_album.jpg",
 )
-cividis = cmapContainer(
-    "cividis",
-    "This is cividis",
-    "beta",
-    "https://upload.wikimedia.org/wikipedia/en/d/da/Black_Sabbath_debut_album.jpg",
-)
-inferno = cmapContainer(
-    "inferno",
-    "This is inferno",
-    "gamma",
-    "https://upload.wikimedia.org/wikipedia/en/d/da/Black_Sabbath_debut_album.jpg",
-)
 
-mapCollection = [viridis, cividis, inferno]
+mapCollection = [red]
 
 # TODO: read version
-version = "0.0.1"
+version = metalmaps.__version__
 date = datetime.today().strftime("%Y-%m-%d")
 
 
