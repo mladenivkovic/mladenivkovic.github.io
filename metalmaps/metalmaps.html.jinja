@@ -19,20 +19,18 @@
 <!-- Table of Contents -->
 <nav>
 <div class="sidenav">
-
-  <!-- <div id="toc_container"> -->
-  
-    <p class="sidenav_title">Quick Access</p>
-    <ul class="sidenav_list">
-{% for item in cmaps %}
-{% for suf in suffixes %}
-<li><a class=menu href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
-{% endfor %}
-{% endfor %}
-    </ul>
-
-  <!-- </div> -->
-
+<p class="sidenav_title">Quick Access</p>
+  <ul class="sidenav_list">
+<hr/>
+    <li><a class=menu href="#top">  Top    </a></li>
+    <li><a class=menu href="#contents">  Contents    </a></li>
+<hr/>
+    {% for item in cmaps %} 
+      {% for suf in suffixes %}
+    <li><a class=menu href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
 </div>
 </nav>
 
@@ -48,7 +46,7 @@
 
 
 <!-- ================================= -->
-<h1> Metal Maps </h1>
+<h1 id=top> Metal Maps </h1>
 <!-- ================================= -->
 
 Text what this page is about.

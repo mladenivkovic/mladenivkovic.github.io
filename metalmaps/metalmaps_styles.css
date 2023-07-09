@@ -190,7 +190,7 @@ a.menu {
   padding-left: 20px;
   float: left;
   font-size: var(--sidebar-fontsize);
-  line-height: calc(var(--sidebar-fontsize) + 20px); !important;
+  line-height: calc(var(--sidebar-fontsize) * 2); !important;
   width: calc(var(--sidebar-width) - 10px) !important;
   padding-right: 0px !important;
   margin-right: 0px !important;
