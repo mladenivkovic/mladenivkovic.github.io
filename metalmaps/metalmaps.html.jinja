@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Metal Maps</title>
+  <title>Metal Maps Gallery</title>
   <meta name="AUTHOR" content="Mladen Ivkovic">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <link rel="stylesheet" href="metalmaps_styles.css">
@@ -46,13 +46,43 @@
 
 
 <!-- ================================= -->
-<h1 id=top> Metal Maps </h1>
+<h1 id=top> Metal Maps Gallery </h1>
 <!-- ================================= -->
 
-Text what this page is about.
+Ever wanted to make your python plots more metal? Fear not, now you can!
+<i>metalmaps</i> delivers heavy metal and classic rock album art inspired 
+matplotlib colormaps. For installation instructions and other details, please
+visit the <a href="https://github.com/mladenivkovic/metalmaps">github repository</a>.
+This page provides a gallery of all available colormaps below.
 
 
-Add image sources.
+
+Credit where credit is due:
+
+<ul>
+  <li> 
+    All of this was inspired by (and shamelessly copied from) Josh Borrow's 
+    <a href="https://github.com/jborrow/swiftascmaps">swiftascmaps</a>
+  </li>
+  <li> 
+    The "Kelvin-Helmholtz" data used in the plots below were generated using 
+    <a href="https://github.com/mladenivkovic/mesh-hydro">mesh-hydro</a>.  
+  </li>
+  <li> 
+    The "EAGLE" data used in the plots below were obtained from the 
+    <a href="https://github.com/SWIFTSIM/SWIFT">swiftsim repository</a>.
+  </li>
+  <li> 
+    The "NGC" data used in the plots below were originally obtained from 
+    <a href="https://www.flickr.com/photos/geckzilla/52040747525/">flickr</a>,
+    credits to <a href="https://www.flickr.com/people/geckzilla/">Judy Schmidt</a>.
+    I modified the image later to normalize the pixel values to be able to demonstrate
+    the colormaps as below.
+  </li>
+</ul>
+
+
+
 
 
 
@@ -61,7 +91,7 @@ Add image sources.
 <p>
 <ul class="toc_list">
   {% for item in cmaps %}
-  <li><a href="#{{item.name}}_main">  {{ item.pretty_name }} ({{item.artist}})    </a></li>
+  <li><a href="#{{item.name}}_main">  {{ item.pretty_name }} (<i>{{item.artist}}</i>)    </a></li>
   {% endfor %}
 </ul>
 </p>
@@ -70,7 +100,7 @@ Add image sources.
 
 {% for item in cmaps %}
 <!-- ================================= -->
-<h2 id="{{item.name}}_main"> {{item.pretty_name}} ({{item.artist}}) </h2>
+<h2 id="{{item.name}}_main"> {{item.pretty_name}} (<i>{{item.artist}}</i>) </h2>
 <!-- ================================= -->
 
 <a href=#contents>Back to table of contents</a>
