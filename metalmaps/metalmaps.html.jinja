@@ -17,22 +17,24 @@
 
 
 <!-- Table of Contents -->
+<nav>
 <div class="sidenav">
 
-  <div id="toc_container">
+  <!-- <div id="toc_container"> -->
   
-    <p class="toc_title">Quick Access</p>
-    <ul class="toc_list">
+    <p class="sidenav_title">Quick Access</p>
+    <ul class="sidenav_list">
 {% for item in cmaps %}
 {% for suf in suffixes %}
-<li><a href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
+<li><a class=menu href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
 {% endfor %}
 {% endfor %}
     </ul>
 
-  </div>
+  <!-- </div> -->
 
 </div>
+</nav>
 
 
 
@@ -85,13 +87,13 @@ Add image sources.
 
 <div class="row">
   <div class="column">
-    <img src="images/KH-metalmaps.{{item.name}}{{suf}}.png" alt="Kelvin Helmholtz Instability | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/KH-metalmaps.{{item.name}}{{suf}}.jpg" alt="Kelvin Helmholtz Instability | {{item.name}}{{suf}}" style="width:100%">
   </div>
   <div class="column">
-    <img src="images/NGC-metalmaps.{{item.name}}{{suf}}.png" alt="NGC7496 | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/NGC-metalmaps.{{item.name}}{{suf}}.jpg" alt="NGC7496 | {{item.name}}{{suf}}" style="width:100%">
   </div>
   <div class="column">
-    <img src="images/EAGLE-metalmaps.{{item.name}}{{suf}}.png" alt="EAGLE 25 z~0.1 | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/EAGLE-metalmaps.{{item.name}}{{suf}}.jpg" alt="EAGLE 25 z~0.1 | {{item.name}}{{suf}}" style="width:100%">
   </div>
 </div> 
 
@@ -111,7 +113,7 @@ Add image sources.
 </div> <!-- maintext -->
 
 <footer>
-<p> Page generated {{date}}, metalmaps version {{version}} </p>
+<p.foot> Page generated {{date}}, metalmaps version {{version}} </p>
 </footer>
 
 </body>

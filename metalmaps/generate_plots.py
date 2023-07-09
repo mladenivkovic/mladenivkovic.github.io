@@ -23,7 +23,7 @@ params = {
     "font.family": "serif",
     "text.usetex": True,
     "figure.figsize": (5, 5),
-    "figure.dpi": 300,
+    "figure.dpi": 100,
 }
 mpl.rcParams.update(params)
 
@@ -59,7 +59,7 @@ def savefig(cmap, plot, ax):
     if not os.path.exists(outputdir):
         os.mkdir(outputdir)
 
-    filename = plot + "-" + cmap + ".png"
+    filename = plot + "-" + cmap + ".jpg"
     fullfilename = os.path.join(outputdir, filename)
     plt.sca(ax)
     plt.savefig(fullfilename, dpi=300)
@@ -183,8 +183,8 @@ def make_NGC_plot(cmap):
 
 
 if __name__ == "__main__":
-    cmaps = ["metalmaps." + c["name"] for c in [plotAlbum]]
-    #  cmaps = ["metalmaps." + c["name"] for c in mapCollection]
+    #  cmaps = ["metalmaps." + c["name"] for c in [plotAlbum]]
+    cmaps = ["metalmaps." + c["name"] for c in mapCollection]
     for cmap in cmaps:
         for suffix in ["", "_r"]:
             c = cmap + suffix

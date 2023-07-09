@@ -3,17 +3,17 @@
     }
 
 :root {
-    --sidebar-width: 200px;
+    --body-left-margin: 10px;
+    --body-top-margin: 20px;
+    --sidebar-width: 220px;
+    --sidebar-fontsize: 10px;
 }
 
 body {
-    /* background-color: Gainsboro ; */
-    /* background-color: #E8E8E8 ; */
-    /* background-color: #f2f2f2; */
     background-color: #E6E6E6 ;
-    margin-top: 100px;
+    margin-top: var(--body-top-margin);
     margin-bottom: 100px;
-    margin-left: 100px;
+    margin-left: var(--body-left-margin);
     margin-right: 10px;
 }
 
@@ -75,10 +75,13 @@ li {
 footer {
     color: black;
     margin-top: 250px;
-    margin-right: 100px;
-    margin-left: 0px;
     font-size: 12px;
+    font-style: italic;
+    margin-left: calc(var(--body-left-margin) + var(--sidebar-width) + 10pt);
+}
 
+p.foot{
+    margin-left: inherit;
 }
 
 div.foot {
@@ -156,19 +159,66 @@ a:hover {
 
 .sidenav {
   height: 100%;                 /* Full-height: remove this if you want "auto" height */
-  width: var(--sidebar-width);  /* Set the width of the sidebar */
+  width: calc(var(--sidebar-width) + 10px);  /* Set the width of the sidebar */
   position: fixed;              /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1;                   /* Stay on top */
   top: 0;                       /* Stay at the top */
   left: 0;                     /* fix it on the right side. use left for left side. */
-  overflow-x: hidden;           /* Disable horizontal scroll */
+  overflow: scroll;
   display: block;
-  padding-top: 90px;
-  padding-left: 10px;
-  padding-right: 20px;
-  margin-right: 20px;
   text-align: left;
+  background-color: #6d6d6d;
 }
 
+.sidenav_title {
+  overflow: scroll;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.sidenav_list {
+  overflow: scroll;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-left:  0px;
+  padding-bottom: 0px;
+  list-style: outside none none !important;
+}
+
+a.menu {
+  padding-left: 20px;
+  float: left;
+  font-size: var(--sidebar-fontsize);
+  line-height: calc(var(--sidebar-fontsize) + 20px); !important;
+  width: calc(var(--sidebar-width) - 10px) !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+}
+
+.sidenav a {
+  color: #2d2d2d;
+  text-decoration: none;
+  font-weight: bold;
+  padding: auto;
+  width: var(--sidebar-width);
+}
+
+/* Change the color of links on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.sidenav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.sidenav a.here {
+  background-color: #b3b3b3;
+}
 
 

@@ -52,6 +52,13 @@ blues_pills = cmapContainer(
         "https://coverartarchive.org/release/97744fea-331a-4fcc-9476-69348cfa1364/17469949894.jpg"
         )
 
+cosmos_factory = cmapContainer(
+        "cosmos_factory",
+        "Cosmo's Factory",
+        "Creedence Clearwater Revival",
+        "https://coverartarchive.org/release/067c3d38-1f5c-4596-baf3-e494a4342d1f/12385725136.jpg"
+        )
+
 london_calling = cmapContainer(
         "london_calling",
         "London Calling",
@@ -96,20 +103,69 @@ ride_the_lightning = cmapContainer(
         "https://coverartarchive.org/release/589ff96d-0be8-3f82-bdd2-299592e51b40/15674886619.jpg"
         )
 
+ziggy_stardust = cmapContainer(
+        "ziggy_stardust",
+        "The Rise and Fall of Ziggy Stardust and the Spiders From Mars",
+        "David Bowie",
+        "https://coverartarchive.org/release/bb7f0f5a-586e-3f90-8665-fdc547aa2a54/1239299887.jpg"
+        )
 
-plotAlbum = london_calling
+deep_purple_in_rock = cmapContainer(
+        "deep_purple_in_rock",
+        "Deep Purple in Rock",
+        "Deep Purple",
+        "https://coverartarchive.org/release/5156ea9f-eb54-4258-bbf0-e3af9219de1f/31715408459.jpg"
+        )
+
+made_in_japan = cmapContainer(
+        "made_in_japan",
+        "Made in Japan",
+        "Deep Purple",
+        "https://coverartarchive.org/release/fb49386f-541a-4928-a606-1f6c9aacaec5/5977807803.jpg"
+        )
+
+dethalbum = cmapContainer(
+        "dethalbum",
+        "The Dethalbum",
+        "Dethklok",
+        "https://coverartarchive.org/release/5379197a-54bf-45f5-95fe-f995fd047d50/19745544468.jpg"
+        )
+
+la_woman = cmapContainer(
+        "la_woman",
+        "L.A. Woman",
+        "The Doors",
+        "https://coverartarchive.org/release/e68f23df-61e3-4264-bfc3-17ac3a6f856b/5132812481.jpg"
+        )
+
+from_mars_to_sirius = cmapContainer(
+        "from_mars_to_sirius",
+        "From Mars to Sirius",
+        "Gojira",
+        "https://coverartarchive.org/release/6ea45c08-3cfa-461a-aa4d-4cc404fcfa86/1512690278.jpg"
+        )
+
+
+plotAlbum = from_mars_to_sirius
 
 mapCollection = [
             apostasy,
             black_sabbath,
             blues_brothers,
             blues_pills,
+            cosmos_factory,
+            deep_purple_in_rock,
+            dethalbum,
+            from_mars_to_sirius,
+            la_woman,
             london_calling,
             master_of_puppets,
+            made_in_japan,
             meteora,
             obzen,
             paranoid,
             ride_the_lightning,
+            ziggy_stardust,
         ]
 
 
