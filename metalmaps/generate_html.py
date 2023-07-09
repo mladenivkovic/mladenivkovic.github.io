@@ -5,6 +5,15 @@ from datetime import datetime
 
 
 def cmapContainer(name, pretty_name, artist, art_url):
+    """
+    Create a dict that can be used by jinja to generate the html.
+    All arguments are strings.
+
+    name: name of the colormap
+    pretty_name: pretty name for the color map. Used in heading and table of contents.
+    artist: artist name
+    art_url: url to original album art to link on page.
+    """
 
     return {
         "name": name,

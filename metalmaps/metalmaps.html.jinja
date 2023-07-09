@@ -11,6 +11,30 @@
 </head>
 
 
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+
+
+<!-- Table of Contents -->
+<div class="sidenav">
+
+  <div id="toc_container">
+  
+    <p class="toc_title">Quick Access</p>
+    <ul class="toc_list">
+{% for item in cmaps %}
+{% for suf in suffixes %}
+<li><a href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
+{% endfor %}
+{% endfor %}
+    </ul>
+
+  </div>
+
+</div>
+
+
 
 <!-- =============================================================== -->
 <!-- =============================================================== -->
@@ -33,7 +57,7 @@ Text what this page is about.
 <p>
 <ul class="toc_list">
   {% for item in cmaps %}
-  <li><a href="#{{ item.name }}">  {{ item.pretty_name }} ({{item.artist}})    </a></li>
+  <li><a href="#{{item.name}}_main">  {{ item.pretty_name }} ({{item.artist}})    </a></li>
   {% endfor %}
 </ul>
 </p>
@@ -42,7 +66,7 @@ Text what this page is about.
 
 {% for item in cmaps %}
 <!-- ================================= -->
-<h2 id={{item.name}}> {{item.pretty_name}} ({{item.artist}}) </h2>
+<h2 id="{{item.name}}_main"> {{item.pretty_name}} ({{item.artist}}) </h2>
 <!-- ================================= -->
 
 <a href=#contents>Back to table of contents</a>
@@ -51,7 +75,7 @@ Text what this page is about.
 
 
 {% for suf in suffixes %}
-<h3 id={{item.name}}{{suf}}> {{item.name}}{{suf}} </h3>
+<h3 id="{{item.name}}{{suf}}"> {{item.name}}{{suf}} </h3>
 <!-- ================================= -->
 
 

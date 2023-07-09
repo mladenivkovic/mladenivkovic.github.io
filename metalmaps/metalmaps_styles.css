@@ -2,6 +2,10 @@
     font-family: "Open Sans", monospace;
     }
 
+:root {
+    --sidebar-width: 200px;
+}
+
 body {
     /* background-color: Gainsboro ; */
     /* background-color: #E8E8E8 ; */
@@ -141,3 +145,30 @@ a:hover {
   margin-right: auto;
   width: 300px;
 }
+
+#maintext {
+  margin-left: calc(var(--sidebar-width) + 50px);
+}
+
+
+/*   Sidebar         */
+/*-------------------*/
+
+.sidenav {
+  height: 100%;                 /* Full-height: remove this if you want "auto" height */
+  width: var(--sidebar-width);  /* Set the width of the sidebar */
+  position: fixed;              /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;                   /* Stay on top */
+  top: 0;                       /* Stay at the top */
+  left: 0;                     /* fix it on the right side. use left for left side. */
+  overflow-x: hidden;           /* Disable horizontal scroll */
+  display: block;
+  padding-top: 90px;
+  padding-left: 10px;
+  padding-right: 20px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+
+
