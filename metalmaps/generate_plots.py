@@ -9,7 +9,7 @@ import matplotlib.ticker
 import h5py
 import numpy as np
 import os
-from generate_html import mapCollection
+from generate_html import mapCollection, plotAlbum
 from metalmaps import *
 
 outputdir = "images"
@@ -160,7 +160,7 @@ def make_NGC_plot(cmap):
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
     im = ax.imshow(
-        np.log10(rho),
+        rho,
         extent=(0, 1, 0, 1),
         #  norm = LogNorm(), # LogNorm fucks with the colorbar ticks?!?! So skip it.
         cmap=cmap,
@@ -183,7 +183,8 @@ def make_NGC_plot(cmap):
 
 
 if __name__ == "__main__":
-    cmaps = ["metalmaps." + c["name"] for c in mapCollection]
+    cmaps = ["metalmaps." + c["name"] for c in [plotAlbum]]
+    #  cmaps = ["metalmaps." + c["name"] for c in mapCollection]
     for cmap in cmaps:
         for suffix in ["", "_r"]:
             c = cmap + suffix
