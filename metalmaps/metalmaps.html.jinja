@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+
+<head>
+  <title>Metal Maps</title>
+  <meta name="AUTHOR" content="Mladen Ivkovic">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" href="metalmaps_styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+
+
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+
+
+<body>
+<div id="maintext">
+
+
+<!-- ================================= -->
+<h1> Metal Maps </h1>
+<!-- ================================= -->
+
+Text what this page is about.
+
+
+
+<h2 id=contents> Contents </h2>
+<p>
+<ul class="toc_list">
+  {% for item in cmaps %}
+  <li><a href="#{{ item.name }}">  {{ item.pretty_name }} ({{item.artist}})    </a></li>
+  {% endfor %}
+</ul>
+</p>
+
+
+
+{% for item in cmaps %}
+<!-- ================================= -->
+<h2 id={{item.name}}> {{item.pretty_name}} ({{item.artist}}) </h2>
+<!-- ================================= -->
+
+<a href=#contents>Back to table of contents</a>
+
+<img src="{{item.url}}" alt="{{ item.name }}" class=album>
+
+
+{% for suf in suffixes %}
+<h3 id={{item.name}}{{suf}}> {{item.name}}{{suf}} </h3>
+<!-- ================================= -->
+
+
+<div class="row">
+  <div class="column">
+    <img src="images/KH-{{item.name}}{{suf}}.png" alt="Kelvin Helmholtz Instability | {{item.name}}{{suf}}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/NGC-{{item.name}}{{suf}}.png" alt="NGC7496 | {{item.name}}{{suf}}" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/EAGLE-{{item.name}}{{suf}}.png" alt="EAGLE 25 z~0.1 | {{item.name}}{{suf}}" style="width:100%">
+  </div>
+</div> 
+
+
+
+{% endfor %}
+{% endfor %}
+
+
+
+
+
+
+
+
+
+</div> <!-- maintext -->
+
+<footer>
+<p> Page generated {{date}}, metalmaps version {{version}} </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    font-family: "Open Sans", monospace;
+    }
+
+body {
+    /* background-color: Gainsboro ; */
+    /* background-color: #E8E8E8 ; */
+    /* background-color: #f2f2f2; */
+    background-color: #E6E6E6 ;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* For all headers in common */
+h1, h2, h3, h4 {
+    color: black;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-left: inherit;
+    margin-right: inherit;
+}
+
+
+h2 {
+    font-size: 24px;
+    margin-top: 100px;
+    margin-left: inherit;
+    margin-right: inherit;
+}
+
+h3 {
+    font-size: 18;
+    margin-top: 40px;
+    margin-left: inherit;
+    margin-right: inherit;
+}
+
+
+h4 {
+    font-size: 12px;
+    margin-top: 40px;
+    margin-left: inherit;
+    margin-right: inherit;
+}
+
+
+p {
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: inherit;
+    margin-right: inherit; /* inherit margin from body */
+}
+
+ul {
+    color: black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    color: black;
+    margin-top: 250px;
+    margin-right: 100px;
+    margin-left: 0px;
+    font-size: 12px;
+
+}
+
+div.foot {
+    color: black;
+    margin-top: 250px;
+    margin-right: 100px;
+    margin-left: 0px;
+    font-size: 12px;
+}
+
+
+
+/* links */
+a:link {
+  color: rgb(0, 51, 130);
+  text-decoration: None;
+  font-weight: bold;
+}
+
+a:visited {
+  /* color: rgb(80, 0, 23);  */
+  color: rgb(53, 0, 116);
+  font-weight: bold;
+}
+
+a:hover {
+  /* background-color: white; */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/*   Images         */
+/*------------------*/
+
+#images {
+   font-size: 80%; 
+   text-align: center; 
+   width: 600px;
+   margin-left: 20px;
+   margin-bottom: 80px;
+}
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.album {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
