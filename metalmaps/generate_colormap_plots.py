@@ -10,16 +10,15 @@ import matplotlib.pyplot as plt
 import matplotlib.colors
 import numpy as np
 import matplotlib as mpl
+import os
 
-from mpl_toolkits.axes_grid1 import ImageGrid
-from mpl_toolkits.axes_grid1 import Divider, Size
+from mapcollection import mapCollection, plotAlbum
+from metalmaps import *
 
 matplotlib.rcParams['font.family'] = 'monospace'
 mpl.rcParams["figure.dpi"] = 100
 
-
-from generate_html import mapCollection, plotAlbum
-from metalmaps import *
+outputdir = "images"
 
 def grayify_cmap(cmap):
     """Return a grayscale version of the colormap"""
@@ -38,10 +37,11 @@ def grayify_cmap(cmap):
     )
 
 
-im = np.outer(np.ones(10), np.arange(100))
+im = np.outer(np.ones(50), np.arange(512))
 
 
 for mapdata in mapCollection:
+#  for mapdata in [plotAlbum]:
 
     fig = plt.figure(figsize=(12, 0.9))
 
@@ -78,7 +78,7 @@ for mapdata in mapCollection:
     name_ax.set_ylim(-1, 1)
 
     figname = "colormap-" + cmap_name + ".png"
-    plt.savefig(figname, dpi=150)
+    fullfilename = os.path.join(outputdir, figname)
+    plt.savefig(fullfilename, dpi=150)
+    print("Saved", fullfilename)
     plt.close()
-
-    break
