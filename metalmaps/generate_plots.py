@@ -3,13 +3,12 @@
 import matplotlib as mpl
 from matplotlib import pyplot as plt
 
-#  from matplotlib.colors import LogNorm
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 import matplotlib.ticker
 import h5py
 import numpy as np
 import os
-from generate_html import mapCollection, plotAlbum
+from mapcollection import mapCollection, plotAlbum
 from metalmaps import *
 
 outputdir = "images"
