@@ -4,4 +4,5 @@
 # generate_plots.py will then import all the colormaps from generate_html.py.
 
 python3 ./generate_plots.py  && \
+python3 ./generate_colormap_plots.py  && \
 python3 ./generate_html.py > metalmaps.html

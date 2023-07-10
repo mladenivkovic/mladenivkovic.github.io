@@ -22,12 +22,15 @@
 <p class="sidenav_title">Quick Access</p>
   <ul class="sidenav_list">
 <hr/>
-    <li><a class=menu href="#top">  Top    </a></li>
-    <li><a class=menu href="#contents">  Contents    </a></li>
+    <li><a class=menu href="#top">       Top                  </a></li>
+    <li><a class=menu href="#contents">  Contents             </a></li>
+    <li><a class=menu href="#maplist">   Colormap List        </a> <br>
+    <li><a class=menu href="#overview">  Colormap Overview    </a></li>
+    <!-- <li><a class=menu href="#covers">    Album Overview    </a></li> -->
 <hr/>
     {% for item in cmaps %} 
       {% for suf in suffixes %}
-    <li><a class=menu href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
+    <li><a class=menu style="font-family:monospace;" href="#{{item.name}}{{suf}}">  {{item.name}}{{suf}}    </a></li>
       {% endfor %}
     {% endfor %}
   </ul>
@@ -92,8 +95,26 @@ But first, credit where credit is due:
 
 
 
-
+<!-- ================================= -->
 <h2 id=contents> Contents </h2>
+<!-- ================================= -->
+<p>
+<ul class="toc_list">
+  <li><a href="#maplist">   Colormap List        </a></li>
+  <li><a href="#overview">  Colormap Overview    </a></li>
+  <!-- <li><a href="#covers">    Album Art Overview   </a></li> --> <!-- UPDATE THIS -->
+  <li><a href="#gallery">   Colormap Gallery     </a></li>
+</ul>
+</p>
+
+
+
+
+
+
+<!-- ================================= -->
+<h2 id=maplist> Colormap List </h2>
+<!-- ================================= -->
 <p>
 <ul class="toc_list">
   {% for item in cmaps %}
@@ -104,18 +125,72 @@ But first, credit where credit is due:
 
 
 
+
+
+
+<!-- ================================= -->
+<h2 id=overview> Colormap Overview </h2>
+<!-- ================================= -->
+
+<p>
+
+<!-- <a href="#black_sabbath_main"> -->
+<!--   <img src="images/colormap-black_sabbath.png" alt="test" class=colormap> -->
+<!-- </a> -->
+
+{% for item in cmaps %}
+<a href="#{{item.name}}_main">
+<img src="images/colormap-{{item.name}}.png" alt="{{item.name}}" class=colormap>
+</a>
+{% endfor %}
+</p>
+
+
+
+
+<!-- ================================= -->
+<!-- <h2 id=covers> Album Overview </h2> --> <!-- TODO UPDATE THIS -->
+<!-- ================================= -->
+
+
+
+
+
+
+
+
+
+<!-- ================================= -->
+<h2 id="gallery"> Colormap Gallery </a>
+<!-- ================================= -->
+
+
 {% for item in cmaps %}
 <!-- ================================= -->
-<h2 id="{{item.name}}_main"> {{item.pretty_name}} (<i>{{item.artist}}</i>) </h2>
+<h3 id="{{item.name}}_main"> {{item.pretty_name}} (<i>{{item.artist}}</i>) </h2>
 <!-- ================================= -->
 
-<a href=#contents>Back to table of contents</a>
+<div style="align-items:center;display:flex;">
+  <div style="flex-basis:40%;">
+    <p>
+      <a href=#contents>Back to table of contents</a> <br>
+      <a href=#maplist>Back to colormap list</a> <br>
+      <!-- <a href=#covers>Back to cover overview </a> <br>--> <!-- TODO UPDATE THIS -->
+      <a href=#overview>Back to colormap overview</a> <br>
+    </p>
+  </div>
+  <div>
+    <img src="{{item.url}}" alt="{{ item.name }}" class=album style="float:center">
+  </div>
+</div>
 
-<img src="{{item.url}}" alt="{{ item.name }}" class=album>
+<!-- <img src="{{item.url}}" alt="{{ item.name }}" class=album style="float:center"> -->
+
 
 
 {% for suf in suffixes %}
-<h3 id="{{item.name}}{{suf}}"> {{item.name}}{{suf}} </h3>
+<!-- ================================= -->
+<h4 id="{{item.name}}{{suf}}" class=cmapname> metalmaps.{{item.name}}{{suf}} </h3>
 <!-- ================================= -->
 
 
