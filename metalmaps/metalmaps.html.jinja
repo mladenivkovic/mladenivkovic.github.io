@@ -132,18 +132,23 @@ But first, credit where credit is due:
 <h2 id=overview> Colormap Overview </h2>
 <!-- ================================= -->
 
-<p>
-
-<!-- <a href="#black_sabbath_main"> -->
-<!--   <img src="images/colormap-black_sabbath.png" alt="test" class=colormap> -->
-<!-- </a> -->
-
 {% for item in cmaps %}
-<a href="#{{item.name}}_main">
-<img src="images/colormap-{{item.name}}.png" alt="{{item.name}}" class=colormap>
-</a>
-{% endfor %}
+<p>
+<div class="row_colorbar">
+  <div class="column_colorbar">
+    <a href="#{{item.name}}_main">
+      <img src="images/colormap-{{item.name}}.png" alt="{{item.name}}" class=colormap_overview>
+    </a>
+  </div>
+  <div class="column_colorbar_album">
+    <a href="#{{item.name}}_main">
+      <img src="{{item.url}}" alt="{{ item.name }}" class=colormap_overview_album>
+    </a>
+  </div>
+</div>
 </p>
+{% endfor %}
+
 
 
 
@@ -196,13 +201,13 @@ But first, credit where credit is due:
 
 <div class="row">
   <div class="column">
-    <img src="images/KH-metalmaps.{{item.name}}{{suf}}.jpg" alt="Kelvin Helmholtz Instability | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/KH-metalmaps.{{item.name}}{{suf}}.jpg" alt="Kelvin Helmholtz Instability | {{item.name}}{{suf}}" style="width:100%;">
   </div>
   <div class="column">
-    <img src="images/NGC-metalmaps.{{item.name}}{{suf}}.jpg" alt="NGC7496 | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/NGC-metalmaps.{{item.name}}{{suf}}.jpg" alt="NGC7496 | {{item.name}}{{suf}}" style="width:100%";>
   </div>
   <div class="column">
-    <img src="images/EAGLE-metalmaps.{{item.name}}{{suf}}.jpg" alt="EAGLE 25 z~0.1 | {{item.name}}{{suf}}" style="width:100%">
+    <img src="images/EAGLE-metalmaps.{{item.name}}{{suf}}.jpg" alt="EAGLE 25 z~0.1 | {{item.name}}{{suf}}" style="width:100%;">
   </div>
 </div> 
 

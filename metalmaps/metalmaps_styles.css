@@ -7,6 +7,7 @@
     --body-top-margin: 20px;
     --sidebar-width: 220px;
     --sidebar-fontsize: 10px;
+    --colorbar-height: 100px;
 }
 
 body {
@@ -146,6 +147,24 @@ a:hover {
   padding: 5px;
 }
 
+.row_colorbar {
+  display: flex;
+  height:var(--colorbar-height);
+  /* max-height: 100px!important; */
+}
+
+.column_colorbar {
+  flex: 60%;
+  padding: 2px;
+  height:var(--colorbar-height);
+}
+
+.column_colorbar_album {
+  flex: 15%;
+  padding: 2px;
+  height:var(--colorbar-height);
+}
+
 .album {
   display: block;
   margin-left: auto;
@@ -153,13 +172,17 @@ a:hover {
   width: 350px;
 }
 
-.colormap {
+.colormap_overview {
   display: block;
   margin-left: auto;
+  height:var(--colorbar-height);
+}
+
+.colormap_overview_album {
+  display: block;
+  /* margin-left: auto; */
   margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 90%;
+  height:var(--colorbar-height);
 }
 
 #maintext {
