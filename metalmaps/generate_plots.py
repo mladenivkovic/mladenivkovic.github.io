@@ -9,7 +9,7 @@ import h5py
 import numpy as np
 import os
 from mapcollection import mapCollection, plotAlbum
-from metalmaps import *
+import metalmaps
 
 outputdir = "images"
 
@@ -20,7 +20,6 @@ params = {
     "axes.titlesize": 9,
     "font.size": 9,
     "font.family": "serif",
-    "text.usetex": True,
     "figure.figsize": (5, 5),
     "figure.dpi": 100,
 }
@@ -181,6 +180,43 @@ def make_NGC_plot(cmap):
     return
 
 
+# for line plots
+x = np.linspace(0, 1.4, 200)
+
+# for line plots
+def y(x, phi):
+    return np.sin(1.2 * np.pi * (x + 0.25) - 0.1 * phi)
+
+
+def make_lineplot(cmap) :
+    """
+    Make a line plot.
+    """
+
+    metalmaps.set_color_cycle(cmap)
+
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+
+    for i in range(10):
+        col = "C"+str(i)
+        cmap_colnames = metalmaps.colorcycle.get_colorlist_from_colormap(cmap)
+        #  cmap_colnames = "#000000"
+        plt.plot(x, y(x, i), lw=3, c=col, label=col+" - "+cmap_colnames[i])
+
+    ax.set_xlabel(r"x", usetex=True)
+    ax.set_xticks([])
+    ax.set_xticklabels([])
+    ax.set_ylabel(r"y", usetex=True)
+    ax.set_yticks([])
+    ax.set_yticklabels([])
+
+    plt.legend(ncols=2, fontsize="small", loc="upper right")
+    plt.tight_layout()
+    savefig(cmap, "lineplot", ax)
+
+
+
 if __name__ == "__main__":
     #  cmaps = ["metalmaps." + c["name"] for c in [plotAlbum]]
     cmaps = ["metalmaps." + c["name"] for c in mapCollection]
@@ -190,3 +226,4 @@ if __name__ == "__main__":
             make_KH_plot(c)
             make_EAGLE_plot(c)
             make_NGC_plot(c)
+            make_lineplot(c)
