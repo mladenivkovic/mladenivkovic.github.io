@@ -65,6 +65,7 @@ def savefig(cmap, plot, ax):
     print("Saved", fullfilename)
     plt.close()
 
+
 def make_colormap_plot(mapdata):
     """
     Make a plot of colormaps as colorbars with lightness underneath.
@@ -81,29 +82,31 @@ def make_colormap_plot(mapdata):
     gray_ax = fig.add_subplot(2, 3, 5)
     gray_ax_r = fig.add_subplot(2, 3, 6)
 
-    fig.subplots_adjust(left=0.01, right=0.99, bottom=0.01, top=0.75, hspace=0.01, wspace=0.08)
+    fig.subplots_adjust(
+        left=0.01, right=0.99, bottom=0.01, top=0.75, hspace=0.01, wspace=0.08
+    )
 
     for ax in fig.axes:
         ax.axis("off")
 
     cmap_name = mapdata["name"]
-    cmap = "metalmaps."+cmap_name
+    cmap = "metalmaps." + cmap_name
 
-    title_font = {'fontname':'monospace', 'fontsize':10}
-    artist_font = {'fontname':'DejaVu Sans', 'fontsize':12}
+    title_font = {"fontname": "monospace", "fontsize": 10}
+    artist_font = {"fontname": "DejaVu Sans", "fontsize": 12}
 
     color_ax.imshow(im, cmap=cmap)
     color_ax.set_title(cmap, **title_font)
 
-    color_ax_r.imshow(im, cmap=cmap+"_r")
-    color_ax_r.set_title(cmap+"_r", **title_font)
+    color_ax_r.imshow(im, cmap=cmap + "_r")
+    color_ax_r.set_title(cmap + "_r", **title_font)
 
     gray_ax.imshow(im, cmap=grayify_cmap(cmap))
-    gray_ax_r.imshow(im, cmap=grayify_cmap(cmap+"_r"))
+    gray_ax_r.imshow(im, cmap=grayify_cmap(cmap + "_r"))
 
-    artist = unescape(mapdata["artist"]) # decode HTML escape chars
+    artist = unescape(mapdata["artist"])  # decode HTML escape chars
     text = mapdata["pretty_name"] + " (" + artist + ")"
-    name_ax.text(0., 0., text, ha="left", va="center", **artist_font)
+    name_ax.text(0.0, 0.0, text, ha="left", va="center", **artist_font)
     name_ax.set_xlim(0, 1)
     name_ax.set_ylim(-1, 1)
 
@@ -130,7 +133,6 @@ def grayify_cmap(cmap):
     return matplotlib.colors.LinearSegmentedColormap.from_list(
         cmap.name + "_grayscale", colors, cmap.N
     )
-
 
 
 def make_EAGLE_plot(cmap):
@@ -256,7 +258,7 @@ def y(x, phi):
     return np.sin(1.2 * np.pi * (x + 0.25) - 0.1 * phi)
 
 
-def make_lineplot(cmap) :
+def make_lineplot(cmap):
     """
     Make a line plot.
     """
@@ -267,10 +269,10 @@ def make_lineplot(cmap) :
     ax = fig.add_subplot(1, 1, 1)
 
     for i in range(10):
-        col = "C"+str(i)
+        col = "C" + str(i)
         cmap_colnames = metalmaps.colorcycle.get_colorlist_from_colormap(cmap)
         #  cmap_colnames = "#000000"
-        plt.plot(x, y(x, i), lw=3, c=col, label=col+" - "+cmap_colnames[i])
+        plt.plot(x, y(x, i), lw=3, c=col, label=col + " - " + cmap_colnames[i])
 
     ax.set_xlabel(r"x", usetex=True)
     ax.set_xticks([])
@@ -282,7 +284,6 @@ def make_lineplot(cmap) :
     plt.legend(ncols=2, fontsize="small", loc="upper right")
     plt.tight_layout()
     savefig(cmap, "lineplot", ax)
-
 
 
 if __name__ == "__main__":

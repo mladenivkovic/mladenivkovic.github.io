@@ -4,6 +4,7 @@
 A collection of all metalmaps color maps with some extra data.
 """
 
+
 def cmapContainer(name, pretty_name, artist, art_url):
     """
     Create a dict that can be used by jinja to generate the html.
@@ -276,5 +277,3 @@ mapCollection = [
     the_hunter,
     ziggy_stardust,
 ]
-
-
