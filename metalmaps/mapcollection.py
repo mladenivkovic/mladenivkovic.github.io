@@ -24,6 +24,13 @@ def cmapContainer(name, pretty_name, artist, art_url):
     }
 
 
+animals = cmapContainer(
+    "animals",
+    "Animals",
+    "Pink Floyd",
+    "https://coverartarchive.org/release/b249399e-77a7-3bb5-ba51-7368506e6f02/8215817116.jpg",
+)
+
 apostasy = cmapContainer(
     "apostasy",
     "The Apostasy",
@@ -92,6 +99,13 @@ dethalbum = cmapContainer(
     "The Dethalbum",
     "Dethklok",
     "https://coverartarchive.org/release/5379197a-54bf-45f5-95fe-f995fd047d50/19745544468.jpg",
+)
+
+hybrid_theory = cmapContainer(
+    "hybrid_theory",
+    "Hybrid Theory",
+    "Linkin Park",
+    "https://coverartarchive.org/release/a17a48b6-51db-3c52-8fdd-066fb9989f78/33576269845.jpg",
 )
 
 hypnotize = cmapContainer(
@@ -192,6 +206,13 @@ powerslave = cmapContainer(
     "https://coverartarchive.org/release/4766bf83-3b58-4584-b75a-43917627b790/2595131402.jpg",
 )
 
+rage_against_the_machine = cmapContainer(
+    "rage_against_the_machine",
+    "Rage Against The Machine",
+    "Rage Against The Machine",
+    "https://coverartarchive.org/release/20fd2c8f-671c-4ebe-921b-39204dde8f89/14831559261.jpg",
+)
+
 reign_in_blood = cmapContainer(
     "reign_in_blood",
     "Reign in Blood",
@@ -241,10 +262,10 @@ ziggy_stardust = cmapContainer(
     "https://coverartarchive.org/release/bb7f0f5a-586e-3f90-8665-fdc547aa2a54/1239299887.jpg",
 )
 
-
-plotAlbum = lenfant_sauvage
+plotAlbum = hybrid_theory
 
 mapCollection = [
+    animals,
     apostasy,
     ashes_of_the_wake,
     black_sabbath,
@@ -255,6 +276,7 @@ mapCollection = [
     dethalbum,
     fear_of_the_dark,
     from_mars_to_sirius,
+    hybrid_theory,
     hypnotize,
     in_utero,
     la_woman,
@@ -276,4 +298,10 @@ mapCollection = [
     south_of_heaven,
     the_hunter,
     ziggy_stardust,
+    rage_against_the_machine,
 ]
+
+# Sort maps by name.
+_mapnames = [c["name"] for c in mapCollection]
+tuples = sorted(zip(_mapnames, mapCollection))
+mapCollection = [t[1] for t in tuples]

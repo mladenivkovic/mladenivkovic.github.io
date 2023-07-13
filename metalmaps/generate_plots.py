@@ -287,12 +287,13 @@ def make_lineplot(cmap):
 
 
 if __name__ == "__main__":
+    #  for mapdata in [plotAlbum]:
     for mapdata in mapCollection:
         cmap = "metalmaps." + mapdata["name"]
-        #  for suffix in ["", "_r"]:
-        #      c = cmap + suffix
-        #      make_KH_plot(c)
-        #      make_EAGLE_plot(c)
-        #      make_NGC_plot(c)
-        #      make_lineplot(c)
+        for suffix in ["", "_r"]:
+            c = cmap + suffix
+            make_KH_plot(c)
+            make_EAGLE_plot(c)
+            make_NGC_plot(c)
+            make_lineplot(c)
         make_colormap_plot(mapdata)
