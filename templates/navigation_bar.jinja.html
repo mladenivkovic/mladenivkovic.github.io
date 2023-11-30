@@ -1,0 +1,21 @@
+
+<!-- Navigation Bar -->
+
+<script src="showMenuIcon.js"></script>
+
+<nav>
+  <div class="topnav" id="myTopnav">
+{% for item in nav_list %}
+  {% if item.filename == pagename %} 
+    <a href="{{item.filename}}" class="here" > {{item.title}} </a>
+  {% else %} 
+    <a href="{{item.filename}}" > {{item.title}} </a>
+  {% endif %}
+{% endfor %}
+    <!-- Menu icon -->
+    <a href="javascript:void(0);" class="icon" onclick="showMenuIcon()">
+      <i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
+
