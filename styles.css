@@ -193,16 +193,26 @@ a:hover {
 /*   Images         */
 /*------------------*/
 
-#imageDiv {
+div.imageDiv {
    font-size: 80%; 
    text-align: center; 
-   width: 600px;
-   margin-left: 20px;
+   width: 700px;
+   margin-left: 80px;
+   margin-right: 20px;
+   margin-bottom: 80px;
+}
+
+div.movieDiv {
+   font-size: 80%; 
+   text-align: center; 
+   width: 700px;
+   margin-left: 80px;
+   margin-right: 20px;
    margin-bottom: 80px;
 }
 
 
-#gallery_contents {
+div.gallery_contents {
     text-align: center;
     display: block;
     margin-left: auto;
