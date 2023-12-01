@@ -36,7 +36,7 @@ def get_pagelist():
     gallery = Page(
             author="Mladen Ivkovic",
             title="Gallery",
-            outputfile="gallery_new.html",
+            outputfile="gallery.html",
             contentfile="../content/gallery.md",
             add_navbar=True,
             add_sidebar=True,
@@ -45,7 +45,7 @@ def get_pagelist():
     scripts = Page(
             author="Mladen Ivkovic",
             title="Manuscripts, Summaries, and Study Material",
-            outputfile="scripts.html",
+            outputfile="scripts-and-summaries.html",
             contentfile="../content/scripts-and-summaries.md",
             add_navbar=True,
             add_sidebar=True,
@@ -54,7 +54,7 @@ def get_pagelist():
     work = Page(
             author="Mladen Ivkovic",
             title="My Work",
-            outputfile="work_new.html",
+            outputfile="work.html",
             contentfile="../content/work.md",
             add_navbar=True,
             add_sidebar=True,
@@ -65,6 +65,24 @@ def get_pagelist():
             title="CV",
             outputfile="CV.html",
             contentfile="../content/cv.md",
+            add_navbar=True,
+            add_sidebar=False,
+            )
+
+    links = Page(
+            author="Mladen Ivkovic",
+            title="Links",
+            outputfile="links.html",
+            contentfile="../content/links.md",
+            add_navbar=True,
+            add_sidebar=False,
+            )
+
+    my_name = Page(
+            author="Mladen Ivkovic",
+            title="My Name",
+            outputfile="my_name.html",
+            contentfile="../content/my_name.md",
             add_navbar=True,
             add_sidebar=False,
             )
@@ -80,6 +98,8 @@ def get_pagelist():
             scripts,
             work,
             cv,
+            links,
+            my_name,
          ]
 
     return pages
