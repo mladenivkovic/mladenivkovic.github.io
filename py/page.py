@@ -89,7 +89,7 @@ class Page(object):
 
     def get_toc_entries(self):
         """
-        Extract the Table of Contents entries and anchors
+        Extract the Table of Contents entries and anchors and heading levels
         from the maintext.
         """
 
@@ -99,17 +99,16 @@ class Page(object):
         lines = self.MAINTEXT.split("\n")
         anchors = []
         names = []
+        levels = []
 
 
         for line in lines:
-            anchor, name = extract_anchor_and_name_from_heading(line, self.contentfile)
+            anchor, name, level = extract_anchor_and_name_from_heading(line, self.contentfile)
             if anchor is not None and name is not None:
                 anchors.append(anchor)
                 names.append(name)
+                levels.append(level)
 
-        return anchors, names
-
-
-
+        return anchors, names, levels
 
 

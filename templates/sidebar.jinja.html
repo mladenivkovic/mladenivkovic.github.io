@@ -6,7 +6,18 @@
     <p class="toc_title">Contents</p>
     <ul class="toc_list">
 {% for item in toc_list %}
+  {% if item.indent == True %}
+      <ul>
+  {% endif %}
 <li> <a href="#{{item.anchor}}"> {{item.name}} </a> </li>
+  {% if item.unindent == True %}
+      </ul>
+  {% endif %}
+  {% if item.is_last == True %}
+    {% for i in range(item.closing_count) %}
+      </ul>
+    {% endfor %}
+  {% endif %}
 {% endfor %}
     </ul>
 

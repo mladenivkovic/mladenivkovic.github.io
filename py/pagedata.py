@@ -42,6 +42,34 @@ def get_pagelist():
             add_sidebar=True,
             )
 
+    scripts = Page(
+            author="Mladen Ivkovic",
+            title="Manuscripts, Summaries, and Study Material",
+            outputfile="scripts.html",
+            contentfile="../content/scripts-and-summaries.md",
+            add_navbar=True,
+            add_sidebar=True,
+            )
+
+    work = Page(
+            author="Mladen Ivkovic",
+            title="My Work",
+            outputfile="work_new.html",
+            contentfile="../content/work.md",
+            add_navbar=True,
+            add_sidebar=True,
+            )
+
+    cv = Page(
+            author="Mladen Ivkovic",
+            title="CV",
+            outputfile="CV.html",
+            contentfile="../content/cv.md",
+            add_navbar=True,
+            add_sidebar=False,
+            )
+
+
 
     # Add all pages to a list, which you return.
     # The order shouldn't matter.
@@ -49,6 +77,9 @@ def get_pagelist():
             mainpage,
             software,
             gallery,
+            scripts,
+            work,
+            cv,
          ]
 
     return pages

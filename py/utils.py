@@ -189,7 +189,7 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
             break
 
     if not check:
-        return None, None
+        return None, None, -1
 
 
     # is this a heading line with a level we want?
@@ -199,12 +199,23 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
             check = True
             break
 
+    found_heading_level = int(line[2])
+
     if not check:
-        print(f"WARNING: Creating Table of Contents for file '{sourcefile}':")
-        print("WARNING: Found a heading line that will be skipped due to your filters.")
-        print(f"WARNING: Line was: '{line}'")
-        print("WARNING: Check `extract_anchor_and_name_from_heading` to modify this behaviour.")
-        return None, None
+        print(f"WARNING:",
+              f"Creating Table of Contents for file '{sourcefile}':")
+        print("WARNING:",
+              "Found a heading line that will be skipped due to your filters.")
+        print(f"WARNING:",
+              f"Min level = {min_heading_level},",
+              f"max level = {max_heading_level},",
+              f"found = {found_heading_level}")
+        print(f"WARNING:",
+              f"Line was: '{line}'")
+        print("WARNING:",
+              "Check `extract_anchor_and_name_from_heading` to modify this behaviour.")
+        print("*****")
+        return None, None, -1
 
 
 
@@ -239,7 +250,7 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
     if name is None:
         raise ValueError(f"Didn't detect name. Line was '{line}'")
 
-    return anchor, name
+    return anchor, name, found_heading_level
 
 
 
