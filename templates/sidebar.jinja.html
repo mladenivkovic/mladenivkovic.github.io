@@ -1,0 +1,15 @@
+<!-- Table of Contents -->
+<div class="sidenav">
+
+  <div id="toc_container">
+  
+    <p class="toc_title">Contents</p>
+    <ul class="toc_list">
+{% for item in toc_list %}
+<li> <a href="#{{item.anchor}}"> {{item.name}} </a> </li>
+{% endfor %}
+    </ul>
+
+  </div>
+
+</div>

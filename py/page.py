@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from utils import get_file_date, get_html_from_markdown, extract_anchor_and_name_from_heading
+
+
 class Page(object):
     """
     A base class containing page metadata of a single html page.
@@ -15,6 +18,7 @@ class Page(object):
                  additional_header_content: str = "<!-- NO_EXTRA_HEADER_CONTENT --!>",
                  additional_footer_content: str = "<!-- NO_EXTRA_FOOTER_CONTENT --!>",
                  add_navbar: bool = True,
+                 add_sidebar: bool = False,
                  ) -> None:
         """
         author: str
@@ -47,8 +51,13 @@ class Page(object):
         self.add_navbar = add_navbar
         self.NAVIGATION_BAR = "<!-- NO NAVIGATION BAR -->"
 
-        self.MAINTEXT = "<!-- NO MAINTEXT -->"
+        self.add_sidebar = add_sidebar
+        self.SIDEBAR = "<!-- NO SIDE BAR -->"
 
+        self.MAINTEXT = "<!-- NO MAINTEXT -->"
+        self.FOOTER = "<!-- NO FOOTER -->"
+
+        self.got_maintext = False
 
         return
 
@@ -59,5 +68,48 @@ class Page(object):
         """
 
         return self.__dict__
+
+
+    def get_maintext(self):
+        """
+        Get maintext html from markdown file specified by `filename`.
+        """
+        self.MAINTEXT = get_html_from_markdown(self.contentfile)
+        self.got_maintext = True
+        return
+
+
+    def get_date(self):
+        """
+        Get the last modified date of the file using git.
+        """
+        self.DATE = get_file_date(self.contentfile)
+        return
+
+
+    def get_toc_entries(self):
+        """
+        Extract the Table of Contents entries and anchors
+        from the maintext.
+        """
+
+        if not self.got_maintext:
+            raise ValueError("Trying to extract ToC entries without having read maintext.")
+
+        lines = self.MAINTEXT.split("\n")
+        anchors = []
+        names = []
+
+
+        for line in lines:
+            anchor, name = extract_anchor_and_name_from_heading(line, self.contentfile)
+            if anchor is not None and name is not None:
+                anchors.append(anchor)
+                names.append(name)
+
+        return anchors, names
+
+
+
 
 

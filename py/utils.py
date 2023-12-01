@@ -4,6 +4,7 @@
 
 import subprocess
 import os
+import jinja2
 
 import html_snippets
 
@@ -51,8 +52,6 @@ def get_file_date(filename):
     if not os.path.exists(filename):
         raise FileNotFoundError(f"Didn't find file {filename}")
 
-    return "GIT_DATE_ERROR"
-
     if not _check_git_is_available():
         raise FileNotFoundError("Didn't find git.")
 
@@ -70,7 +69,7 @@ def get_file_date(filename):
 
     dateline = gitstdout.strip()
     datestrlist = dateline.split(" ")
-    datestr = datestr[0]
+    datestr = datestrlist[0]
 
     return datestr
 
@@ -138,5 +137,111 @@ def write_html_sep(filepointer, stage:str):
     filepointer.write("<!---  " + stage + " --->\n")
     filepointer.write(html_snippets.separator)
     return
+
+
+def read_template(filename):
+    """
+    Read in the jinja template specified by `filename`.
+    """
+
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f"Didn't find file '{filename}'")
+
+    f= open(filename, "r")
+    file_contents = f.read()
+    f.close()
+
+    template = jinja2.Template(file_contents)
+
+    return template
+
+
+def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
+    """
+    Extract an anchor and a heading from a line of html.
+
+    line: a line of html
+
+    sourcefile: the original markdown source file.
+
+    Returns:
+
+    anchor: Str
+        anchor to link to of heading
+
+    name: str
+        name of heading
+
+    """
+
+    min_heading_level = 2
+    max_heading_level = 4
+
+    # all html heading strings
+    all_heading_strings = [f"<h{i}" for i in range(7)]
+    filtered_heading_strings = [f"<h{i}" for i in range(min_heading_level, max_heading_level+1)]
+
+    # is this a heading line?
+    check = False
+    for start in all_heading_strings:
+        if line.startswith(start):
+            check = True
+            break
+
+    if not check:
+        return None, None
+
+
+    # is this a heading line with a level we want?
+    check = False
+    for start in filtered_heading_strings:
+        if line.startswith(start):
+            check = True
+            break
+
+    if not check:
+        print(f"WARNING: Creating Table of Contents for file '{sourcefile}':")
+        print("WARNING: Found a heading line that will be skipped due to your filters.")
+        print(f"WARNING: Line was: '{line}'")
+        print("WARNING: Check `extract_anchor_and_name_from_heading` to modify this behaviour.")
+        return None, None
+
+
+
+    pre, post = line.split('id="')
+
+    i = 0
+    anchor = None
+    while i < len(post):
+        if post[i] == '"':
+            anchor = post[:i]
+            break
+        i+=1
+
+    if anchor is None:
+        raise ValueError(f"Didn't detect anchor. Line was '{line}'")
+
+
+    pre, end = post.split('">')
+    i = 0
+    name = None
+    while i < len(end):
+        if end[i] == '<':
+            name = end[:i]
+            break
+        i+=1
+
+    if end[i:] not in ["</h1>", "</h2>", "</h3>", "</h4>", "</h5>"]:
+        print("WARNING: Unexpected end of line. Expected header closing tag. Got ", end[i:], end)
+        print(f"WARNING: Full line was '{line}'")
+        print(f"WARNING: Source file was '{sourcefile}'")
+
+    if name is None:
+        raise ValueError(f"Didn't detect name. Line was '{line}'")
+
+    return anchor, name
+
+
+
 
 

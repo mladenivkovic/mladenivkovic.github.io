@@ -21,14 +21,25 @@ def get_pagelist():
             outputfile="index.html",
             contentfile="../content/index.md",
             add_navbar=True,
+            add_sidebar=False,
             )
 
     software = Page(
             author="Mladen Ivkovic",
-            title="Mladen Ivkovic's Home Page - Software",
+            title="Software",
             outputfile="software.html",
             contentfile="../content/software.md",
             add_navbar=True,
+            add_sidebar=False,
+            )
+
+    gallery = Page(
+            author="Mladen Ivkovic",
+            title="Gallery",
+            outputfile="gallery_new.html",
+            contentfile="../content/gallery.md",
+            add_navbar=True,
+            add_sidebar=True,
             )
 
 
@@ -37,6 +48,7 @@ def get_pagelist():
     pages = [
             mainpage,
             software,
+            gallery,
          ]
 
     return pages
