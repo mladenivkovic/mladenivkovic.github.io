@@ -1,28 +1,27 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<!-- page generated using jinja templates. -->
 <html>
 
 
-  <head>
-    <title>Software</title>
-    <meta name="AUTHOR" content="Mladen Ivkovic">
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
-  </head>
-
-
+<head>
+  <title>Software</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="AUTHOR" content="Mladen Ivkovic">
+  <meta charset=utf-8>
+  <meta http-equiv="Content-Type" content="text/html">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran|Roboto|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+  <!-- NO_EXTRA_HEADER_CONTENT --!>
+</head>
 
 <!-- =============================================================== -->
 <!-- =============================================================== -->
+<!---  end header --->
+<!-- =============================================================== -->
 <!-- =============================================================== -->
 
+<body>
 
-
-
-
-<body class=hasSidebar>
 
 
 <!-- Navigation Bar -->
@@ -31,13 +30,35 @@
 
 <nav>
   <div class="topnav" id="myTopnav">
-    <a href="index.html" >                              Home                        </a>
-    <a href="work.html">                                My Work                     </a>
-    <a href="CV.html">                                  CV                          </a>
-    <a href="scripts-and-summaries.html" >              Scripts And Study Material  </a>
-    <a href="software.html" class="here">               Software                    </a>
-    <a href="gallery.html">                             Gallery                     </a>
-    <a href="links.html">                               Links                       </a>
+
+   
+    <a href="index.html" > Home </a>
+  
+
+   
+    <a href="work.html" > My Work </a>
+  
+
+   
+    <a href="CV.html" > CV </a>
+  
+
+   
+    <a href="scripts-and-summaries.html" > Scripts and Study Material </a>
+  
+
+   
+    <a href="software.html" class="here" > Software </a>
+  
+
+   
+    <a href="gallery.html" > Gallery </a>
+  
+
+   
+    <a href="links.html" > Links </a>
+  
+
     <!-- Menu icon -->
     <a href="javascript:void(0);" class="icon" onclick="showMenuIcon()">
       <i class="material-icons">menu</i></a>
@@ -46,214 +67,90 @@
 
 
 
+<!-- NO SIDE BAR -->
 
 
-<!-- =============================================================== -->
-<!-- =============================================================== -->
-<!-- =============================================================== -->
-
-
-
-
-
-<!-- Table of Contents -->
-<div class="sidenav">
-
-  <div id="toc_container">
-  
-    <p class="toc_title">Contents</p>
-    <ul class="toc_list">
-      <li><a href="#my_own">        My own code     </a></li>
-      <li><a href="#contribution">  Contributions   </a></li>
-      <li><a href="#docs">          Docs            </a></li>
-    </ul>
-
-  </div>
-
-</div>
-
-
-
-
+<!-- --------------------------------------------------------------- -->
+<!-- -------------------   START MAINTEXT   ------------------------ -->
+<!-- --------------------------------------------------------------- -->
 
 
 <div id="maintext">
 
 
-<!-- =============================== -->
-<h1> Software </h1>
-<!-- =============================== -->
-
-<p>
-Some of the software that I've been working on and is publicly available.
-</p>
-
-
-
-
-
-
-
-
-
-<!-- ====================================================== -->
-<h2 id=my_own> My Own Work </h2>
-<!-- ====================================================== -->
-
-
-<p>
+<h1 id="software">Software</h1>
+<p>Some of the software that I’ve been working on and is publicly available.</p>
+<h2 id="my-own-work">My Own Work</h2>
+<!-- 
+To make a new line just use a line break, not a new paragraph, add 2 empty 
+spaces after the top line. E.g.
+- [Link Name](address)<space><space>
+  Your text here. 
+-->
 <ul>
-
-  <li>  
-    <a href="https://github.com/mladenivkovic/published_thingies"> Public Code </a> <br>
-
-    Collection of various codes, scripts and python modules, mainly for learning/teaching matters.
-  </li>
-
-  <li>  
-    <a href="https://github.com/mladenivkovic/coding_templates"> Coding Templates</a> <br>
-
-    Various how-to's for different programming languages and some libraries with those languages,
-    along with a few algorithm demonstrations.
-
-    So far includes C, c++, python, fortran, LaTeX, and bash.
-  </li>
-
-  <li> 
-    <a href="https://pypi.org/project/astro-meshless-surfaces/"> Astro Meshless Surfaces </a> <br>
-
-    A small, inefficient python module for computing effective surfaces for meshless methods of particle
-    hydrodynamics the <a href="https://arxiv.org/abs/1409.7395">Hopkins 2015</a> way or the
-    <a href="https://arxiv.org/abs/1209.4302"> Ivanova 2013</a> way.
-
-    It's only written for 2d computations and meant to test things out, generate some plots etc,
-    not to be used for serious computations.
-
-    Also includes simple reading-in functions for <a href="https://ascl.net/1805.020" > SWIFT</a> hdf5
-    output.
-  </li>
-
-  <li>  
-    <a href="https://github.com/mladenivkovic/mladenivkovic.github.io"> This homepage</a> <br>
-
-    Source code for this homepage.
-  </li>
-
-  <li>  <a href="https://github.com/mladenivkovic/mesh-hydro"> Mesh-Hydro </a> <br>
-
-        A project to learn about essentials of (finite volume/finite difference) numerical conservation law
-        and hydrodynamics solvers. Written explicitly so it is easy to read, play with, and extend. Works in
-        1D and 2D.
-  </li>
-
-  <li>  <a href="https://github.com/mladenivkovic/metalmaps"> metalmaps </a> <br>
-
-        Python matplotlib colormaps based on heavy metal and classic rock album artworks. 
-        <a href="metalmaps/metalmaps.html"> Click here for a full gallery of the available colormaps</a>.
-  </li>
-
-
+<li><p><a href="https://github.com/mladenivkovic/published_thingies">Public Code</a><br />
+Collection of various codes, scripts and python modules, mainly for learning/teaching matters.</p></li>
+<li><p><a href="https://github.com/mladenivkovic/coding_templates">Coding Templates</a><br />
+Various how-to’s for different programming languages and some libraries with those languages, along with a few algorithm demonstrations.<br />
+So far includes C, c++, python, fortran, LaTeX, and bash.</p></li>
+<li><p><a href="https://pypi.org/project/astro-meshless-surfaces/">Astro Meshless Surfaces</a><br />
+A small, inefficient python module for computing effective surfaces for meshless methods of particle hydrodynamics the <a href="https://arxiv.org/abs/1409.7395">Hopkins 2015</a> way or the <a href="https://arxiv.org/abs/1209.4302">Ivanova 2013</a> way.<br />
+It’s only written for 2d computations and meant to test things out, generate some plots etc, not to be used for serious computations.<br />
+Also includes simple reading-in functions for <a href="https://ascl.net/1805.020">SWIFT</a> hdf5 output.</p></li>
+<li><p><a href="https://github.com/mladenivkovic/mladenivkovic.github.io">This homepage</a><br />
+Source code for this homepage.</p></li>
+<li><p><a href="https://github.com/mladenivkovic/mesh-hydro">Mesh-Hydro</a><br />
+A project to learn about essentials of (finite volume/finite difference) numerical conservation law and hydrodynamics solvers. Written explicitly so it is easy to read, play with, and extend. Works in 1D and 2D.</p></li>
+<li><p><a href="https://github.com/mladenivkovic/metalmaps">metalmaps</a><br />
+Python matplotlib colormaps based on heavy metal and classic rock album artworks. <a href="metalmaps/metalmaps.html">Click here for a full gallery of the available colormaps</a>.</p></li>
 </ul>
-</p>
-
-
-
-
-
-
-
-
-
-
-<!-- ====================================================== -->
-<h2 id=contribution> Codes I've contributed to </h2>
-<!-- ====================================================== -->
-
-<p>
+<h2 id="codes-ive-contributed-to">Codes I’ve contributed to</h2>
 <ul>
-
-  <li>  <a href="https://bitbucket.org/rteyssie/ramses/src/master/"> Ramses </a>             <br>
-
-        an open source code to model astrophysical systems. My contibution is the
-        particle unbinding and mergertree patch.
-  </li>
-
-
-  <li>  <a href="https://gitlab.com/revaz/pNbody"> pNbody </a>                               <br>
-
-        a parallelized python module toolbox designed to manipulate and display
-        interactively very large N-body systems
-  </li>
-
-
-  <li>  <a href="http://swiftsim.com"> SWIFT </a>                                            <br>
-
-        a hydrodynamics and gravity code for astrophysics and cosmology.
-  </li>
-
-
-  <li>  <a href="http://www.peano-framework.org"> Peano </a>                                 <br>
-
-        a framework for solvers operating on dynamically adaptive Cartesian meshes.
-  </li>
-
+<li><p><a href="https://bitbucket.org/rteyssie/ramses/src/master/">Ramses</a><br />
+an open source code to model astrophysical systems. My contibution is the particle unbinding and mergertree patch.</p></li>
+<li><p><a href="https://gitlab.com/revaz/pNbody">pNbody</a><br />
+a parallelized python module toolbox designed to manipulate and display interactively very large N-body systems</p></li>
+<li><p><a href="http://swiftsim.com">SWIFT</a><br />
+a hydrodynamics and gravity code for astrophysics and cosmology.</p></li>
+<li><p><a href="http://www.peano-framework.org">Peano</a><br />
+a framework for solvers operating on dynamically adaptive Cartesian meshes.</p></li>
 </ul>
-</p>
-
-
-
-
-
-
-
-<!-- ====================================================== -->
-<h2 id=docs> Docs </h2>
-<!-- ====================================================== -->
-
-
-<p>
+<h2 id="docs">Docs</h2>
 <ul>
-
-  <li>  <a href="https://obswww.unige.ch/~ivkovic/debugging/"> Debugging Notes </a>              <br>
-
-        A collection of debugging hints for software I work with
-  </li>
-
-  <li>  <a href="https://obswww.unige.ch/~ivkovic/instructions/"> Instructions</a>               <br>
-
-        Various how-to's for different software, hacks, patches... Mainly stuff I want to write down
-        because I can't be bothered to memorize it.
-  </li>
-
-  <li>  <a href="https://obswww.unige.ch/~ivkovic/notes_on_codes/"> Misc Notes</a>               <br>
-
-        Various notes on minor software specific stuff. Essentially a documentation add-on/extension.
-  </li>
-
+<li><p><a href="https://obswww.unige.ch/~ivkovic/debugging/">Debugging Notes</a><br />
+A collection of debugging hints for software I work with</p></li>
+<li><p><a href="https://obswww.unige.ch/~ivkovic/instructions/">Instructions</a><br />
+Various how-to’s for different software, hacks, patches… Mainly stuff I want to write down because I can’t be bothered to memorize it.</p></li>
+<li><p><a href="https://obswww.unige.ch/~ivkovic/notes_on_codes/">Misc Notes</a><br />
+Various notes on minor software specific stuff. Essentially a documentation add-on/extension.</p></li>
 </ul>
-</p>
 
 
 
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------   END MAINTEXT  -------------------------- -->
+<!-- --------------------------------------------------------------- -->
 
 
+</div> <!--Maintext-->
 
-</div> <!-- Maintext-->
-
-
-
-
-
-<!-- =============================================================== -->
-<!-- =============================================================== -->
-<!-- =============================================================== -->
-
-
+<!-- ------------------------------------------------------- -->
+<!-- ---------------   START FOOTER  ----------------------- -->
+<!-- ------------------------------------------------------- -->
 <footer>
 <p>
-  Last update of this page: 08.07.2023
+  Last update of this page: 2023-11-30
 </p>
+<!-- NO_EXTRA_FOOTER_CONTENT --!>
 </footer>
+<!-- ------------------------------------------------------- -->
+<!-- ----------------   END FOOTER  ------------------------ -->
+<!-- ------------------------------------------------------- -->
+
 
 </body>
-</html>
+<!-- =============================================================== -->
+<!-- =============================================================== -->
+<!---  end body --->
+<!-- =============================================================== -->
+<!-- =============================================================== -->
