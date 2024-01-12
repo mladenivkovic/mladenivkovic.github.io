@@ -18,6 +18,8 @@
 
 ## Talks, Seminars, Presentations
 
+- [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/u/s!Aq715l3GOLnojnOG31VmuZJUt5TW?e=HsXL6k) (26MB) \
+  Edinburgh, January 2024
  
 - [From printf to a Proper Bug Finding Strategy – Debugging And Testing Basics  ](https://1drv.ms/p/s!Aq715l3GOLnojmnHV5cfefRu9jJZ?e=IADWjd) (2MB) \
   Debugging, Testing, and Correctness Workshop Series 2023, Durham, 2023
