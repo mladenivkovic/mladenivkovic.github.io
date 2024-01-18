@@ -34,6 +34,7 @@ _nav_scripts = NavItem("scripts-and-summaries.html", "Scripts and Study Material
 _nav_software = NavItem("software.html", "Software", "software")
 _nav_gallery = NavItem("gallery.html", "Gallery", "gallery")
 _nav_links = NavItem("links.html", "Links", "links")
+_nav_personal = NavItem("personal.html", "Personal", "personal")
 
 
 # Stick all navigation items in this list. Order matters.
@@ -45,6 +46,7 @@ _nav_item_list = [
                     _nav_software,
                     _nav_gallery,
                     _nav_links,
+                    _nav_personal,
         ]
 
 

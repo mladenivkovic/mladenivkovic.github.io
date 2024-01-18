@@ -78,6 +78,15 @@ def get_pagelist():
             add_sidebar=False,
             )
 
+    personal = Page(
+            author="Mladen Ivkovic",
+            title="Personal",
+            outputfile="personal.html",
+            contentfile="../content/personal.md",
+            add_navbar=True,
+            add_sidebar=True,
+            )
+
     my_name = Page(
             author="Mladen Ivkovic",
             title="My Name",
@@ -99,6 +108,7 @@ def get_pagelist():
             work,
             cv,
             links,
+            personal,
             my_name,
          ]
 
