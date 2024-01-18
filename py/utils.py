@@ -12,6 +12,7 @@ import html_snippets
 _pandoc_available = False
 _git_available = False
 
+
 def _check_git_is_available():
     """
     Check whether git is available. Returns True is that is the case.
@@ -55,13 +56,13 @@ def get_file_date(filename):
     if not _check_git_is_available():
         raise FileNotFoundError("Didn't find git.")
 
-    cmd = 'git log -1 --pretty="format:%ci" '+filename
+    cmd = 'git log -1 --pretty="format:%ci" ' + filename
 
     gitdate = subprocess.run(
-            cmd,
-            shell=True,
-            check=True,
-            capture_output=True,
+        cmd,
+        shell=True,
+        check=True,
+        capture_output=True,
     )
     gitstdout = gitdate.stdout
     if isinstance(gitstdout, bytes):
@@ -112,13 +113,13 @@ def get_html_from_markdown(filename):
     if not _check_pandoc_is_available():
         raise FileNotFoundError(f"Didn't find pandoc OUTSIDE")
 
-    cmd = "pandoc "+filename
+    cmd = "pandoc " + filename
 
     html = subprocess.run(
-            cmd,
-            shell=True,
-            check=True,
-            capture_output=True,
+        cmd,
+        shell=True,
+        check=True,
+        capture_output=True,
     )
     stdout = html.stdout
     #  if isinstance(stdout, bytes):
@@ -127,7 +128,7 @@ def get_html_from_markdown(filename):
     return stdout
 
 
-def write_html_sep(filepointer, stage:str):
+def write_html_sep(filepointer, stage: str):
     """
     Write a separator with a name between the lines for orientation.
     """
@@ -147,7 +148,7 @@ def read_template(filename):
     if not os.path.exists(filename):
         raise FileNotFoundError(f"Didn't find file '{filename}'")
 
-    f= open(filename, "r")
+    f = open(filename, "r")
     file_contents = f.read()
     f.close()
 
@@ -156,7 +157,7 @@ def read_template(filename):
     return template
 
 
-def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
+def extract_anchor_and_name_from_heading(line: str, sourcefile: str):
     """
     Extract an anchor and a heading from a line of html.
 
@@ -179,7 +180,9 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
 
     # all html heading strings
     all_heading_strings = [f"<h{i}" for i in range(7)]
-    filtered_heading_strings = [f"<h{i}" for i in range(min_heading_level, max_heading_level+1)]
+    filtered_heading_strings = [
+        f"<h{i}" for i in range(min_heading_level, max_heading_level + 1)
+    ]
 
     # is this a heading line?
     check = False
@@ -191,7 +194,6 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
     if not check:
         return None, None, -1
 
-
     # is this a heading line with a level we want?
     check = False
     for start in filtered_heading_strings:
@@ -202,22 +204,23 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
     found_heading_level = int(line[2])
 
     if not check:
-        print(f"WARNING:",
-              f"Creating Table of Contents for file '{sourcefile}':")
-        print("WARNING:",
-              "Found a heading line that will be skipped due to your filters.")
-        print(f"WARNING:",
-              f"Min level = {min_heading_level},",
-              f"max level = {max_heading_level},",
-              f"found = {found_heading_level}")
-        print(f"WARNING:",
-              f"Line was: '{line}'")
-        print("WARNING:",
-              "Check `extract_anchor_and_name_from_heading` to modify this behaviour.")
+        print(f"WARNING:", f"Creating Table of Contents for file '{sourcefile}':")
+        print(
+            "WARNING:", "Found a heading line that will be skipped due to your filters."
+        )
+        print(
+            f"WARNING:",
+            f"Min level = {min_heading_level},",
+            f"max level = {max_heading_level},",
+            f"found = {found_heading_level}",
+        )
+        print(f"WARNING:", f"Line was: '{line}'")
+        print(
+            "WARNING:",
+            "Check `extract_anchor_and_name_from_heading` to modify this behaviour.",
+        )
         print("*****")
         return None, None, -1
-
-
 
     pre, post = line.split('id="')
 
@@ -227,23 +230,26 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
         if post[i] == '"':
             anchor = post[:i]
             break
-        i+=1
+        i += 1
 
     if anchor is None:
         raise ValueError(f"Didn't detect anchor. Line was '{line}'")
-
 
     pre, end = post.split('">')
     i = 0
     name = None
     while i < len(end):
-        if end[i] == '<':
+        if end[i] == "<":
             name = end[:i]
             break
-        i+=1
+        i += 1
 
     if end[i:] not in ["</h1>", "</h2>", "</h3>", "</h4>", "</h5>"]:
-        print("WARNING: Unexpected end of line. Expected header closing tag. Got ", end[i:], end)
+        print(
+            "WARNING: Unexpected end of line. Expected header closing tag. Got ",
+            end[i:],
+            end,
+        )
         print(f"WARNING: Full line was '{line}'")
         print(f"WARNING: Source file was '{sourcefile}'")
 
@@ -251,8 +257,3 @@ def extract_anchor_and_name_from_heading(line:str, sourcefile:str):
         raise ValueError(f"Didn't detect name. Line was '{line}'")
 
     return anchor, name, found_heading_level
-
-
-
-
-

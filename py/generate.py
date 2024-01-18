@@ -19,7 +19,6 @@ body_template_file = "../templates/body_template.jinja.html"
 footer_template_file = "../templates/footer_template.jinja.html"
 
 
-
 def get_footer(page: Page):
     """
     Generate the footer html.
@@ -32,7 +31,6 @@ def get_footer(page: Page):
     footer = footer_template.render(**vardict)
     page.FOOTER = footer
     return
-
 
 
 def setup_pages():
@@ -55,10 +53,7 @@ def setup_pages():
         if page.add_sidebar:
             page.SIDEBAR = generate_sidebar(page)
 
-
     return pages
-
-
 
 
 def generate_page(page: Page):
@@ -90,15 +85,13 @@ def generate_page(page: Page):
     f.write(html)
     write_html_sep(f, "end header")
 
-    html=body_template.render(**vardict)
+    html = body_template.render(**vardict)
     f.write(html)
     write_html_sep(f, "end body")
 
     f.close()
 
     return
-
-
 
 
 if __name__ == "__main__":

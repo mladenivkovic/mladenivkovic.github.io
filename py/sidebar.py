@@ -13,7 +13,7 @@ class TocItem(object):
     An object to store side bar (table of contents) metadata.
     """
 
-    def __init__(self, anchor:str, name:str, level:int):
+    def __init__(self, anchor: str, name: str, level: int):
         """
         anchor: anchor to link to
         name: name of ToC entry
@@ -30,9 +30,6 @@ class TocItem(object):
         self.unindent = False
 
         return
-
-
-
 
 
 def generate_sidebar(page: Page):
@@ -58,7 +55,6 @@ def generate_sidebar(page: Page):
         sidebar = "<!-- NO SIDEBAR; FOUND NO HEADINGS IN SOURCE FILE -->"
         return sidebar
 
-
     minlevel = min(levels)
 
     for i in range(len(names)):
@@ -67,13 +63,13 @@ def generate_sidebar(page: Page):
         if i > 0:
             # if heading level increased, mark down that we indent
             # the entry in the table of contents
-            if levels[i-1] < levels[i]:
+            if levels[i - 1] < levels[i]:
                 new.indent = True
 
         if i < len(names) - 1:
             # if heading level decreases, mark down that we un-indent
             # the entry in the table of contents
-            if levels[i] > levels[i+1]:
+            if levels[i] > levels[i + 1]:
                 new.unindent = True
 
         toc_item_list.append(new)
@@ -86,5 +82,3 @@ def generate_sidebar(page: Page):
     sidebar = template.render(toc_list=toc_item_list)
 
     return sidebar
-
-

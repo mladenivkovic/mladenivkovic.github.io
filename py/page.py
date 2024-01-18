@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from utils import get_file_date, get_html_from_markdown, extract_anchor_and_name_from_heading
+from utils import (
+    get_file_date,
+    get_html_from_markdown,
+    extract_anchor_and_name_from_heading,
+)
 
 
 class Page(object):
@@ -9,17 +13,18 @@ class Page(object):
     A base class containing page metadata of a single html page.
     """
 
-    def __init__(self,
-                 author: str = "Mladen Ivkovic",
-                 date: str = "DATE_JINJA_ERROR",
-                 title: str = "TITLE_JINJA_ERROR",
-                 outputfile: str = "OUTPUT_NOT_PROVIDED",
-                 contentfile: str = "content_file",
-                 additional_header_content: str = "<!-- NO_EXTRA_HEADER_CONTENT --!>",
-                 additional_footer_content: str = "<!-- NO_EXTRA_FOOTER_CONTENT --!>",
-                 add_navbar: bool = True,
-                 add_sidebar: bool = False,
-                 ) -> None:
+    def __init__(
+        self,
+        author: str = "Mladen Ivkovic",
+        date: str = "DATE_JINJA_ERROR",
+        title: str = "TITLE_JINJA_ERROR",
+        outputfile: str = "OUTPUT_NOT_PROVIDED",
+        contentfile: str = "content_file",
+        additional_header_content: str = "<!-- NO_EXTRA_HEADER_CONTENT --!>",
+        additional_footer_content: str = "<!-- NO_EXTRA_FOOTER_CONTENT --!>",
+        add_navbar: bool = True,
+        add_sidebar: bool = False,
+    ) -> None:
         """
         author: str
             author name
@@ -61,14 +66,12 @@ class Page(object):
 
         return
 
-
     def get_vardict(self) -> dict:
         """
         return a populated dict of all class attributes.
         """
 
         return self.__dict__
-
 
     def get_maintext(self):
         """
@@ -78,14 +81,12 @@ class Page(object):
         self.got_maintext = True
         return
 
-
     def get_date(self):
         """
         Get the last modified date of the file using git.
         """
         self.DATE = get_file_date(self.contentfile)
         return
-
 
     def get_toc_entries(self):
         """
@@ -94,21 +95,22 @@ class Page(object):
         """
 
         if not self.got_maintext:
-            raise ValueError("Trying to extract ToC entries without having read maintext.")
+            raise ValueError(
+                "Trying to extract ToC entries without having read maintext."
+            )
 
         lines = self.MAINTEXT.split("\n")
         anchors = []
         names = []
         levels = []
 
-
         for line in lines:
-            anchor, name, level = extract_anchor_and_name_from_heading(line, self.contentfile)
+            anchor, name, level = extract_anchor_and_name_from_heading(
+                line, self.contentfile
+            )
             if anchor is not None and name is not None:
                 anchors.append(anchor)
                 names.append(name)
                 levels.append(level)
 
         return anchors, names, levels
-
-
