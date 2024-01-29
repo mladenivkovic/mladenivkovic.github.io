@@ -19,9 +19,6 @@
   analysis, performance metrics. Includes tutorials for MPI, OpenMPI, and tutorials and user guides performance analysis tools 
   such as [Scalasca](https://www.scalasca.org/) and [Score-P](https://www.vi-hps.org/projects/score-p/).
 
-<!-- TODO: -->
-<!-- - gdb cheat sheet -->
-
 
 
 
@@ -43,6 +40,7 @@
 
 - M. Schaller's [Simulation Sizes Collection](https://home.strw.leidenuniv.nl/~schaller/simulation_sizes.html)
 - Niko Sarcevic's [HEP/Astro/Cosmo open source software collection](https://github.com/nikosarcevic/HEP-ASTRO-COSMO/blob/main/README.md)
+- My [gdb cheat sheet](https://1drv.ms/b/s!Aq715l3GOLnojwXyQjf1-ffq2f-Y?e=lIvseW)
 
 
 

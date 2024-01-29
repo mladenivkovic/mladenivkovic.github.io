@@ -23,6 +23,9 @@ spaces after the top line. E.g.
     Various how-to's for different programming languages and some libraries with those languages, along with a few algorithm demonstrations.  
     So far includes C, c++, python, fortran, LaTeX, and bash.
 
+-   [debugging-essentials-demo](https://github.com/mladenivkovic/debugging-essentials-demo)
+    A repository for an intro to using debuggers and debugging tools. Intended for lectures and workshops with live demos. Includes exercises.
+
 -   [Astro Meshless Surfaces](https://pypi.org/project/astro-meshless-surfaces/)  
     A small, inefficient python module for computing effective surfaces for meshless methods of particle hydrodynamics the [Hopkins 2015](https://arxiv.org/abs/1409.7395) way or the [Ivanova 2013](https://arxiv.org/abs/1209.4302) way.  
     It's only written for 2d computations and meant to test things out, generate some plots etc, not to be used for serious computations.   
@@ -73,6 +76,8 @@ spaces after the top line. E.g.
 
 ## Docs
 
+-   [gdb cheat sheet](https://1drv.ms/b/s!Aq715l3GOLnojwXyQjf1-ffq2f-Y?e=lIvseW)
+    Single page pdf containing essential commands for gdb.
 
 -   [Debugging Notes](https://obswww.unige.ch/~ivkovic/debugging/)  
     A collection of debugging hints for software I work with
