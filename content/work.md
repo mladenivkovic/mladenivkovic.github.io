@@ -18,6 +18,9 @@
 
 ## Talks, Seminars, Presentations
 
+- [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/b/s!Aq715l3GOLnojxtvLyV2cSOw8nOZ?e=m7GZMM) (3.6MB) \
+  Building Galaxies From Scratch Conference, Vienna, February 2024
+ 
 - [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/u/s!Aq715l3GOLnojnOG31VmuZJUt5TW?e=HsXL6k) (26MB) \
   Edinburgh, January 2024
  
@@ -70,6 +73,10 @@
 
 
 
+## Posters
+
+- [SWIFT 2: Keeping the Good, Discussing the Bad, Removing the Ugly ](https://1drv.ms/b/s!Aq715l3GOLnojx2S2RCQgqAzq818?e=Wg04bX) (2MB) \
+  Building Galaxies From Scratch Conference, Vienna, February 2024
 
 
 
