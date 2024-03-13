@@ -41,6 +41,8 @@
 - M. Schaller's [Simulation Sizes Collection](https://home.strw.leidenuniv.nl/~schaller/simulation_sizes.html)
 - Niko Sarcevic's [HEP/Astro/Cosmo open source software collection](https://github.com/nikosarcevic/HEP-ASTRO-COSMO/blob/main/README.md)
 - My [gdb cheat sheet](https://1drv.ms/b/s!Aq715l3GOLnojwXyQjf1-ffq2f-Y?e=lIvseW)
-
+- [Colossus](https://colossus.astro.umd.edu/) -  A powerful online cosmology calculator
+- [Scientific Visualisation Handbook](https://github.com/rougier/scientific-visualization-book) - Book containing myriad of beatutiful python+matplotlib scientific visualisations, including the source code
+)
 
 
