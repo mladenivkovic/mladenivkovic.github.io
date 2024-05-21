@@ -18,6 +18,12 @@
 
 ## Talks, Seminars, Presentations
 
+- [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/u/s!Aq715l3GOLnojx5Soq8kE1vkVhtv?e=QBws03) (28.5MB) \
+  Sussex, May 2024
+
+- [SWIFT 2: Keeping the Good, Discussing the Bad, Removing the Ugly ](https://1drv.ms/b/s!Aq715l3GOLnojyA8nuggxgQYd9EL?e=bndVRm) (2MB) \
+  Durham HPC/AI days, Durham, May 2024
+
 - [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/u/s!Aq715l3GOLnojx7_o5LTehSP8CsG?e=igboOp) (12.9MB) \
   CosmICConnections, Durham, March 2024
  
