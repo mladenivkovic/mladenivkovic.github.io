@@ -3,8 +3,17 @@
 
 ## Publications
 
+- Matthieu Schaller, Josh Borrow, Peter W Draper, **Mladen Ivkovic**, Stuart McAlpine,
+  Bert Vandenbroucke, Yannick Bahé, Evgenii Chaikin, Aidan B G Chalk, Tsang Keung Chan, 
+  Camila Correa, Marcel van Daalen, Willem Elbers, Pedro Gonnet, Loïc Hausammann, 
+  John Helly, Filip Huško, Jacob A Kegerreis, Folkert S J Nobels, Sylvia Ploeckinger, 
+  Yves Revaz, William J Roper, Sergio Ruiz-Bonilla, Thomas D Sandnes, Yolan Uyttenhove, 
+  James S Willis, Zhen Xiang, \
+  [Swift: a modern highly parallel gravity and smoothed particle hydrodynamics solver for astrophysical and cosmological applications](https://ui.adsabs.harvard.edu/abs/2024MNRAS.530.2378S/abstract), \
+  Monthly Notices of the Royal Astronomical Society, Volume 530, Issue 2, May 2024, Pages 2378–2419, \
+  [https://doi.org/10.1093/mnras/stae922](https://doi.org/10.1093/mnras/stae922), \
 
-- Mladen Ivkovic, Romain Teyssier, \
+- **Mladen Ivkovic**, Romain Teyssier, \
   ["ACACIA: a new method to produce on-the-fly merger trees in the RAMSES code"](https://ui.adsabs.harvard.edu/abs/2022MNRAS.510..959I/abstract) \
   Monthly Notices of the Royal Astronomical Society, Volume 510, Issue 1, February 2022, Pages 959-979, \
   [https://doi.org/10.1093/mnras/stab3329](https://doi.org/10.1093/mnras/stab3329) 
@@ -17,6 +26,10 @@
 
 
 ## Talks, Seminars, Presentations
+
+- [SWIFT 2: Towards Exascale SPH With Task Based Parallelism](https://1drv.ms/b/s!Aq715l3GOLnojyEAgW4oNQFImXGP?e=TMedIT)(11MB) \
+  Materials Modelling using Peta to Exascale Computing, Daresbury, July 2024 \
+  SPH-SIG Meeting, Manchester, July 2024
 
 - [GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism and Dynamic Sub-Cycling with SWIFT](https://1drv.ms/u/s!Aq715l3GOLnojx5Soq8kE1vkVhtv?e=QBws03) (28.5MB) \
   Sussex, May 2024
