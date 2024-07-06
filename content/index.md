@@ -19,13 +19,17 @@ in the [Scientific Computing Group](https://scicomp.webspace.durham.ac.uk)
 of the [Department of Computer Science](https://www.durham.ac.uk/departments/academic/computer-science/),
 working on task-based SPH formalisms and the performance prediction and
 optimisation thereof with the [Peano](http://peano-framework.org) framework.
+In a nutshell, we are researching how to design and write scientific
+software to solve numerical fluid dynamics using particle methods with
+maximum performance and efficiency, preparing them for exa-scale computing facilities.
 
-My background is in physics and astrophysics, with heavy emphasis on
-computational astrophysics and software development for High Performance
-Computing simulations and on-the-fly analysis. So far, my fields of research
-span halo finding, mergertree building, computational fluid dynamics (using
-Finite Volume methods, Finite Volume Particle Methods, and Smoothed Particle
-Hydrodynamics), and radiative transfer. I have worked on and with astrophysical
+My background is in physics and computational astrophysics. I'm especially 
+interested in algorithms and numerical methods for high performance scientific 
+computing such as (astro)physical simulations and on-the-fly analysis thereof. 
+In terms of applications, so far my fields of research span halo finding, 
+merger-tree building, computational fluid dynamics (using Finite Volume methods, 
+Finite Volume Particle Methods, and Smoothed Particle Hydrodynamics), and 
+radiative transfer/radiation hydrodynamics. I have worked on and with astrophysical
 codes like [SWIFT](https://swiftsim.com) and [RAMSES](https://bitbucket.org/rteyssie/ramses/src/master/).
 
 
