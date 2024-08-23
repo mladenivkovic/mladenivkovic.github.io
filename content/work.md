@@ -13,6 +13,12 @@
   Monthly Notices of the Royal Astronomical Society, Volume 530, Issue 2, May 2024, Pages 2378–2419, \
   [https://doi.org/10.1093/mnras/stae922](https://doi.org/10.1093/mnras/stae922), \
 
+- **Mladen Ivkovic**, \
+  ["GEAR-RT: Towards Exa-Scale Moment Based Radiative Transfer For Cosmological Simulations Using Task-Based Parallelism And Dynamic Sub-Cycling with SWIFT](https://ui.adsabs.harvard.edu/abs/2023PhDT.........3I/abstract) \
+  PhD Thesis, EPFL, Lausanne Switzerland, 2023. \
+  [https://doi.org/10.5075/epfl-thesis-9973](https://doi.org/10.5075/epfl-thesis-9973)
+
+
 - **Mladen Ivkovic**, Romain Teyssier, \
   ["ACACIA: a new method to produce on-the-fly merger trees in the RAMSES code"](https://ui.adsabs.harvard.edu/abs/2022MNRAS.510..959I/abstract) \
   Monthly Notices of the Royal Astronomical Society, Volume 510, Issue 1, February 2022, Pages 959-979, \
