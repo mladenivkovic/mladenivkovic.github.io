@@ -33,6 +33,9 @@
 
 ## Talks, Seminars, Presentations
 
+- [SWIFT 2: Towards Exascale SPH With Task Based Parallelism](https://1drv.ms/p/s!Aq715l3GOLnojyN7Za5uwJFJpAcF?e=bawWRf)(5.5MB) \
+  SWIFTCon, Leiden, September 2024
+
 - [SWIFT 2: Towards Exascale SPH With Task Based Parallelism](https://1drv.ms/b/s!Aq715l3GOLnojyEAgW4oNQFImXGP?e=TMedIT)(11MB) \
   Materials Modelling using Peta to Exascale Computing, Daresbury, July 2024 \
   SPH-SIG Meeting, Manchester, July 2024
