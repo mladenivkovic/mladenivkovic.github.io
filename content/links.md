@@ -8,7 +8,6 @@
   Version 1.10 played well with SWIFT. Very useful to find errors, detect deadlocks, and check source code for valid usage.
   [Github mirror to tutorial](https://github.com/mladenivkovic/must-tutorial).
 
-  
 - [MAQAO](http://www.maqao.org/) <br>
   "Modular Assembly Quality Analyzer and Optimizer" is a performance analysis and optimization framework operating at binary 
   level with a focus on core performance. Very user friendly, very beginner friendly. Will e.g. give you suggestions how to
@@ -19,7 +18,7 @@
   analysis, performance metrics. Includes tutorials for MPI, OpenMPI, and tutorials and user guides performance analysis tools 
   such as [Scalasca](https://www.scalasca.org/) and [Score-P](https://www.vi-hps.org/projects/score-p/).
 
-- [Darshan](https://www.mcs.anl.gov/research/projects/darshan/)
+- [Darshan](https://www.mcs.anl.gov/research/projects/darshan/) <br>
   [(github)](https://github.com/darshan-hpc/darshan) A lightweight lightweight I/O characterization tool and profiler.
 
 
@@ -44,6 +43,5 @@
 - My [gdb cheat sheet](https://1drv.ms/b/s!Aq715l3GOLnojwXyQjf1-ffq2f-Y?e=lIvseW)
 - [Colossus](https://colossus.astro.umd.edu/) -  A powerful online cosmology calculator
 - [Scientific Visualisation Handbook](https://github.com/rougier/scientific-visualization-book) - Book containing myriad of beatutiful python+matplotlib scientific visualisations, including the source code
-)
 
 
