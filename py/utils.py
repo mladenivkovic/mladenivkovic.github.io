@@ -197,9 +197,7 @@ def extract_anchor_and_name_from_heading(head, sourcefile: str):
     if head.name not in filtered_heading_strings:
 
         print(f"NOTE:", f"Creating Table of Contents for file '{sourcefile}':")
-        print(
-            "NOTE:", "Found a heading line that will be skipped due to your filters."
-        )
+        print("NOTE:", "Found a heading line that will be skipped due to your filters.")
         print(
             f"NOTE:",
             f"Min level = {min_heading_level},",

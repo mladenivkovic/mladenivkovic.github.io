@@ -104,7 +104,7 @@ class Page(object):
 
         # grab all headings
         soup = BeautifulSoup(self.MAINTEXT, "html.parser")
-        headings= soup.find_all(re.compile("h[1-5]"))
+        headings = soup.find_all(re.compile("h[1-5]"))
 
         anchors = []
         names = []
