@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from bs4 import BeautifulSoup
+import re
+
 from utils import (
     get_file_date,
     get_html_from_markdown,
@@ -99,14 +102,17 @@ class Page(object):
                 "Trying to extract ToC entries without having read maintext."
             )
 
-        lines = self.MAINTEXT.split("\n")
+        # grab all headings
+        soup = BeautifulSoup(self.MAINTEXT, "html.parser")
+        headings= soup.find_all(re.compile("h[1-5]"))
+
         anchors = []
         names = []
         levels = []
 
-        for line in lines:
+        for head in headings:
             anchor, name, level = extract_anchor_and_name_from_heading(
-                line, self.contentfile
+                head, self.contentfile
             )
             if anchor is not None and name is not None:
                 anchors.append(anchor)

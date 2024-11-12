@@ -113,7 +113,7 @@ def get_html_from_markdown(filename):
     if not _check_pandoc_is_available():
         raise FileNotFoundError(f"Didn't find pandoc OUTSIDE")
 
-    cmd = "pandoc " + filename
+    cmd = "pandoc --wrap=preserve " + filename
 
     html = subprocess.run(
         cmd,
@@ -157,11 +157,11 @@ def read_template(filename):
     return template
 
 
-def extract_anchor_and_name_from_heading(line: str, sourcefile: str):
+def extract_anchor_and_name_from_heading(head, sourcefile: str):
     """
     Extract an anchor and a heading from a line of html.
 
-    line: a line of html
+    head: a BeautifulSoup tag (found through soup.find_all())
 
     sourcefile: the original markdown source file.
 
@@ -173,87 +173,56 @@ def extract_anchor_and_name_from_heading(line: str, sourcefile: str):
     name: str
         name of heading
 
+    level: int
+        level of heading
+
     """
 
     min_heading_level = 2
     max_heading_level = 4
 
     # all html heading strings
-    all_heading_strings = [f"<h{i}" for i in range(7)]
+    all_heading_strings = [f"h{i}" for i in range(7)]
     filtered_heading_strings = [
-        f"<h{i}" for i in range(min_heading_level, max_heading_level + 1)
+        f"h{i}" for i in range(min_heading_level, max_heading_level + 1)
     ]
 
     # is this a heading line?
-    check = False
-    for start in all_heading_strings:
-        if line.startswith(start):
-            check = True
-            break
-
-    if not check:
+    if head.name not in all_heading_strings:
+        print(f"This is not a heading line: '{head}'. Skipping.")
         return None, None, -1
 
-    # is this a heading line with a level we want?
-    check = False
-    for start in filtered_heading_strings:
-        if line.startswith(start):
-            check = True
-            break
+    found_heading_level = int(head.name.strip("h"))
 
-    found_heading_level = int(line[2])
+    if head.name not in filtered_heading_strings:
 
-    if not check:
-        print(f"WARNING:", f"Creating Table of Contents for file '{sourcefile}':")
+        print(f"NOTE:", f"Creating Table of Contents for file '{sourcefile}':")
         print(
-            "WARNING:", "Found a heading line that will be skipped due to your filters."
+            "NOTE:", "Found a heading line that will be skipped due to your filters."
         )
         print(
-            f"WARNING:",
+            f"NOTE:",
             f"Min level = {min_heading_level},",
             f"max level = {max_heading_level},",
             f"found = {found_heading_level}",
         )
-        print(f"WARNING:", f"Line was: '{line}'")
+        print(f"NOTE:", f"Line was: '{head}'")
         print(
-            "WARNING:",
+            "NOTE:",
             "Check `extract_anchor_and_name_from_heading` to modify this behaviour.",
         )
         print("*****")
         return None, None, -1
 
-    pre, post = line.split('id="')
-
-    i = 0
-    anchor = None
-    while i < len(post):
-        if post[i] == '"':
-            anchor = post[:i]
-            break
-        i += 1
+    anchor = head.attrs["id"]
 
     if anchor is None:
-        raise ValueError(f"Didn't detect anchor. Line was '{line}'")
+        raise ValueError(f"Didn't detect anchor. Line was '{head}'")
 
-    pre, end = post.split('">')
-    i = 0
-    name = None
-    while i < len(end):
-        if end[i] == "<":
-            name = end[:i]
-            break
-        i += 1
+    if head.name is None:
+        raise ValueError(f"Didn't detect name. Line was '{head}'")
 
-    if end[i:] not in ["</h1>", "</h2>", "</h3>", "</h4>", "</h5>"]:
-        print(
-            "WARNING: Unexpected end of line. Expected header closing tag. Got ",
-            end[i:],
-            end,
-        )
-        print(f"WARNING: Full line was '{line}'")
-        print(f"WARNING: Source file was '{sourcefile}'")
+    text = head.text.strip()
+    text = head.text.replace("\n", " ")
 
-    if name is None:
-        raise ValueError(f"Didn't detect name. Line was '{line}'")
-
-    return anchor, name, found_heading_level
+    return anchor, text, found_heading_level
